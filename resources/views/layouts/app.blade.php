@@ -1,24 +1,28 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="{{mix('css/app.css')}}">
+    <title>Laravel</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{mix('css/app.css')}}">
 
 
-        <!-- Styles -->
-       
-    
-    </head>
-    <body class="antialiased">
+    <!-- Styles -->
+
+
+</head>
+
+<body class="antialiased">
+    @include('includes._nav')
     @yield('content')
 
-        <script src="{{mix('js/app.js')}}"></script>
+    <script src="{{mix('js/app.js')}}"></script>
+    @include('includes._footer')
+</body>
 
-    </body>
 </html>
