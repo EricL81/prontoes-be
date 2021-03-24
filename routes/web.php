@@ -1,7 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FrontController;
+use App\Http\Controllers\HomeController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,6 @@ use App\Http\Controllers\FrontController;
 |
 */
 
-Route::get('/',[FrontController::class,'index'])->name('home');
+Route::get('/',[HomeController::class,'index'])->name('home');
+Route::get('/announcement/new',[HomeController::class,'newAnnouncement'])->name('newAnnouncement');
 
