@@ -17,16 +17,9 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a class="dropdown-item" href="#">Todas las categorías</a></li>
-                        <li><a class="dropdown-item" href="#">Ropa</a></li>
-                        <li><a class="dropdown-item" href="#">Informática</a></li>
-                        <li><a class="dropdown-item" href="#">Móviles</a></li>
-                        <li><a class="dropdown-item" href="#">Deportes</a></li>
-                        <li><a class="dropdown-item" href="#">Muebles</a></li>
-                        <li><a class="dropdown-item" href="#">Cine y música</a></li>
-                        <li><a class="dropdown-item" href="#">Libros</a></li>
-                        <li><a class="dropdown-item" href="#">Coches y motos</a></li>
-                        <li><a class="dropdown-item" href="#">Bicicletas</a></li>
-                        <li><a class="dropdown-item" href="#">Coleccionismo</a></li>
+                        @foreach($categories as $category)
+                        <li><a class="dropdown-item" href="#">{{$category->name}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
             </ul>
@@ -34,13 +27,13 @@
 
                 @guest
                 <li class="nav-item btn btn-warning me-2">
-                    <a class="text-decoration-none text-white" href='/register'>Sube tu anuncio</a>
+                    <a class="text-decoration-none text-white" href='/login'>Sube tu anuncio</a>
                 </li>
                 @endguest
 
                 @auth
                 <li class="nav-item btn btn-warning me-2">
-                    <a class="text-decoration-none text-white" href='{{route('newAnnouncement')}}'>Sube tu anuncio</a>
+                    <a class="text-decoration-none text-white" href="{{route('newAnnouncement')}}">Sube tu anuncio</a>
                 </li>
                 @endauth
             </ul>

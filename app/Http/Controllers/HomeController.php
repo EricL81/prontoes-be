@@ -2,16 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\View;
 use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        View::share('categories', Category::all());
+    }
     public function index ()
     {
-        return view('welcome');
+        $announcements = Announcement::all();
+        return view('welcome', compact('announcements'));
     }
 
     public function newAnnouncement ()
