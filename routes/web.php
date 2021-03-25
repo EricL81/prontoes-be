@@ -19,4 +19,6 @@ Route::get('/',[HomeController::class,'index'])->name('home');
 Route::get('/announcement/new',[HomeController::class,'newAnnouncement'])->name('newAnnouncement');
 Route::post('/announcement/create',[HomeController::class,'createAnnouncement'])->name('createAnnouncement');
 Route::get('/category/detail/{id}',[HomeController::class,'detailCategory'])->name('detailCategory');
+Route::get('/announcement/detail/{id}',[HomeController::class,'detailAnnouncement'])->name('detailAnnouncement');
+
 

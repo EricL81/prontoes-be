@@ -40,4 +40,10 @@ class HomeController extends Controller
         $category = Category::findOrFail($id);
         return view('announcements.detailcategory', compact('category'));
     }
+
+    public function detailAnnouncement($id)
+    {
+        $announcement = Announcement::findOrFail($id);
+        return view('announcements.detail', compact('announcement'));
+    }
 }
