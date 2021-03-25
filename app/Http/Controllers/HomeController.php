@@ -13,7 +13,7 @@ class HomeController extends Controller
 {
     public function index ()
     {
-        $announcements = Announcement::all();
+        $announcements = Announcement::orderBy('id', 'desc')->take(5)->get();
         return view('welcome', compact('announcements'));
     }
 
@@ -33,5 +33,11 @@ class HomeController extends Controller
         $a->save();
         
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
+    }
+
+    public function detailCategory($id)
+    {
+        $category = Category::findOrFail($id);
+        return view('announcements.detailcategory', compact('category'));
     }
 }

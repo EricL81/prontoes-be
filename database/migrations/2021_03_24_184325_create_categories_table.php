@@ -28,10 +28,7 @@ class CreateCategoriesTable extends Migration
             $c = new Category();
             $c->name = $category;
             $c->save();
-        }
-
-
-        
+        }   
     }
 
     /**
