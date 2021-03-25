@@ -11,10 +11,6 @@ use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller
 {
-    public function __construct()
-    {
-        View::share('categories', Category::all());
-    }
     public function index ()
     {
         $announcements = Announcement::all();
@@ -33,6 +29,7 @@ class HomeController extends Controller
         $a->description = $request->input('description');
         $a->price = $request->input('price');
         $a->user_id = Auth::id();
+        $a->category_id = $request->input('category');
         $a->save();
         
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');

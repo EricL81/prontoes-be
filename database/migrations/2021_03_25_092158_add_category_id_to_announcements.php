@@ -14,8 +14,7 @@ class AddCategoryIdToAnnouncements extends Migration
     public function up()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->foreignId('category_id')->default(1)->after('price')->constrained();
-
+            $table->foreignId('category_id')->after('price')->constrained();
         });
     }
 
@@ -27,8 +26,7 @@ class AddCategoryIdToAnnouncements extends Migration
     public function down()
     {
         Schema::table('announcements', function (Blueprint $table) {
-            $table->dropForeign('category_id');
-            $table->dropColumn('category_id');
+            $table->dropForeign('announcements_category_id_foreign');
 
         });
     }
