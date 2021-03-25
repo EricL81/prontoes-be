@@ -39,7 +39,7 @@
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputdescription1" class="form-label">Descripción</label>
-                    <textarea name="description" row="5" type="text" class="form-control" id="exampleInputdescription1">
+                    <textarea name="description" row="5" type="text" class="form-control text-start" id="exampleInputdescription1">
                     {{old('description')}}
                     </textarea>
                     <div id="nameHelp" class="form-text">

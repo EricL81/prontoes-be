@@ -24,13 +24,13 @@
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block" alt="...">
+                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block" alt="...">
+                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x330   " class="d-block" alt="...">
+                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid" alt="...">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
@@ -71,6 +71,11 @@
             </div>
         </div>
         @endforeach
+        <div class="row my-3">
+            <div class="col-12 col-md-8 offset-md-2">
+            {{$announcements->links()}}
+            </div>
+        </div>
     </div>
 </div>
 @endsection

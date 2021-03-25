@@ -13,7 +13,7 @@ class HomeController extends Controller
 {
     public function index ()
     {
-        $announcements = Announcement::orderBy('id', 'desc')->take(5)->get();
+        $announcements = Announcement::orderBy('id', 'desc')->paginate(5);
         return view('welcome', compact('announcements'));
     }
 

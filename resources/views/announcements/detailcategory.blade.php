@@ -9,19 +9,19 @@
     <div class="row justify-content-center align-items-center">
         @foreach($category->announcements as $announcement)
         <div class="col-12 col-md-6">
-            <div class="card mb-3" style="max-width: 540px;">
+            <div class="card mb-3" style="max-width: 650px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                     <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="carousel-item active">
-                                    <img src="https://via.placeholder.com/300x350" class="d-block" alt="...">
+                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x350" class="d-block" alt="...">
+                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid" alt="...">
                                 </div>
                                 <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x350" class="d-block" alt="...">
+                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid" alt="...">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button"
