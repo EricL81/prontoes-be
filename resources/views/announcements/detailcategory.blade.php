@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="row justify-content-center align-items-center">
-        @foreach($category->announcements as $announcement)
+        @forelse($category->announcements as $announcement)
         <div class="col-12 col-md-6">
             <div class="card mb-3" style="max-width: 650px;">
                 <div class="row g-0">
@@ -59,7 +59,13 @@
                 </div>
             </div>
         </div>
-        @endforeach
+        @empty
+        <div class="row">
+            <div class="col-12 col-md-4 offset md-4">
+            <p>No hay anuncios en esa categoria</p>
+            </div>
+        </div>
+        @endforelse
     </div>
 </div>
 @endsection

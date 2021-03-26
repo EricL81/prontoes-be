@@ -1,9 +1,6 @@
 @extends('layouts.app')
 @section('content')
 
-@if(session('announcement.create.success'))
-<div class="alert alert-success">{{session('announcement.create.success')}}</div>
-@endif
 <div class="container h-100 mt-4">
     <div class="row justify-content-center align-items-center">
         <div class="col-12">
