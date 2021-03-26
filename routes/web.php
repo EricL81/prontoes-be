@@ -21,7 +21,11 @@ Route::get('/announcement/new',[HomeController::class,'newAnnouncement'])->name(
 Route::post('/announcement/create',[HomeController::class,'createAnnouncement'])->name('createAnnouncement');
 Route::get('/category/detail/{id}',[HomeController::class,'detailCategory'])->name('detailCategory');
 Route::get('/announcement/detail/{id}',[HomeController::class,'detailAnnouncement'])->name('detailAnnouncement');
-Route::get('/revisor',[RevisorController::class,'index']);
+
+Route::get('/revisor',[RevisorController::class,'index'])->name('revisor.home');
+Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.announcement.accept');
+Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.announcement.reject');
+
 
 
 

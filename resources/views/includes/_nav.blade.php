@@ -48,6 +48,20 @@
                 @endguest
 
                 @auth
+                @if(Auth::user()->is_revisor)
+                <li class="nav-item mx-2">
+                    <a class="text-decoration-none" href="#">Hola {{Auth::user()->name}}</a>
+                </li>
+                <li class="nav-item btn btn-primary mx-2">
+                    <a class="text-decoration-none text-white" href="{{route('revisor.home')}}">Revisor <span class="badge rounded-pill bg-danger">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span></a>
+                </li>
+                <li class="nav-item">
+                    <form action="/logout" method="POST">
+                        @csrf
+                        <button class="btn btn-danger" type="submit">Logout</button>
+                    </form>
+                </li>
+                @else
                 <li class="nav-item mx-2">
                     <a class="text-decoration-none" href="#">Hola {{Auth::user()->name}}</a>
                 </li>
@@ -57,6 +71,7 @@
                         <button class="btn btn-danger" type="submit">Logout</button>
                     </form>
                 </li>
+                @endif
                 @endauth
             </ul>
         </div>
