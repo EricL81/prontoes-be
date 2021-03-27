@@ -22,22 +22,19 @@ class RevisorController extends Controller
 
     public function accept($announcement_id)
     {
-        $this->setAccepted($announcement_id,true);
-        return redirect()->route('revisor.home');
-
+        return $this->setAccepted($announcement_id,true);
     }
 
     public function reject($announcement_id)
     {
-        $this->setAccepted($announcement_id,false);
-        return redirect()->route('revisor.home');
-
+        return $this->setAccepted($announcement_id,false);
     }
 
-    public function setAccepted($announcement_id,$value)
+    private function setAccepted($announcement_id,$value)
     {
         $announcement = Announcement::find($announcement_id);
         $announcement->is_accepted = $value;
         $announcement->save();
+        return redirect()->route('revisor.home');
     }
 }

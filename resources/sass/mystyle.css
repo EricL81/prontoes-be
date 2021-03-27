@@ -1,0 +1,89 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    /*     background-color: #99D2A5e3;
+    background-image: linear-gradient(0deg, #a9ffeae3 30%, #5cc9d6e3 70%); */
+}
+
+.masthead {
+    min-width: 100vh;
+    background-size: contain;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.linav {
+    border: 2px solid;
+    border-color: #89ffbe;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 15rem;
+    height: 10rem;
+    box-shadow: 0 8px 32px 0 rgba(4, 11, 109, 0.37);
+    border-radius: 3rem;
+}
+
+.linav a {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 3rem;
+    transition: 0.3s;
+}
+
+.linav:hover a {
+    height: 100%;
+    width: 100%;
+    border-radius: 3rem;
+}
+
+.arrow {
+    border: solid #3532ef;
+    border-width: 0 8px 8px 0;
+    display: inline-block;
+    padding: 8px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.up {
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+}
+
+.mycard {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(0.0px);
+    -webkit-backdrop-filter: blur(0.0px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, #3532ef 0%, #89ffbe 51%, #3532ef 100%)
+}
+
+.btn-grad {
+    padding: 10px 20px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}

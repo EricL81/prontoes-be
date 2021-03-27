@@ -17,16 +17,27 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('foto');
             $table->timestamps();
         });
 
-        $categories = ['Ropa','Informática','Móviles','Deportes',
-                        'Muebles','Cine y música','Libros',
-                        'Coches y motos','Bicicletas','Coleccionismo'];
+        $categories = [    
+                ['name'=>'Ropa','foto'=>'ropa.jpg'],
+                ['name'=>'Informática','foto'=>'informatica.jpg'],
+                ['name'=>'Móviles','foto'=>'moviles.jpg'],
+                ['name'=>'Deportes','foto'=>'deportes.jpg'],
+                ['name'=>'Muebles','foto'=>'muebles.jpg'],
+                ['name'=>'Cine y música','foto'=>'cineymusica.jpg'],
+                ['name'=>'Libros','foto'=>'libros.jpg'],
+                ['name'=>'Coches y motos','foto'=>'cochesymotos.jpg'],
+                ['name'=>'Bicicletas','foto'=>'bicicletas.jpg'],
+                ['name'=>'Coleccionismo','foto'=>'coleccionismo.jpg']
+        ];
 
         foreach ($categories as $category) {
             $c = new Category();
-            $c->name = $category;
+            $c->name = $category['name'];
+            $c->foto = $category['foto'];
             $c->save();
         }   
     }

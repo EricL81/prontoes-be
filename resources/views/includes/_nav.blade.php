@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="tophome">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{route('home')}}"><img src="/css/placeholder-logo.png" width="150" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -26,13 +26,13 @@
             <ul class="d-flex list-unstyled align-items-center mb-0">
 
                 @guest
-                <li class="nav-item btn btn-warning me-2">
+                <li class="nav-item btn btn-grad me-2">
                     <a class="text-decoration-none text-white" href='/login'>Sube tu anuncio</a>
                 </li>
                 @endguest
 
                 @auth
-                <li class="nav-item btn btn-warning me-2">
+                <li class="nav-item btn btn-grad me-2">
                     <a class="text-decoration-none text-white" href="{{route('newAnnouncement')}}">Sube tu anuncio</a>
                 </li>
                 @endauth
@@ -49,17 +49,20 @@
 
                 @auth
                 @if(Auth::user()->is_revisor)
-                <li class="nav-item mx-2">
-                    <a class="text-decoration-none" href="#">Hola {{Auth::user()->name}}</a>
-                </li>
-                <li class="nav-item btn btn-primary mx-2">
-                    <a class="text-decoration-none text-white" href="{{route('revisor.home')}}">Revisor <span class="badge rounded-pill bg-danger">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span></a>
-                </li>
-                <li class="nav-item">
-                    <form action="/logout" method="POST">
-                        @csrf
-                        <button class="btn btn-danger" type="submit">Logout</button>
-                    </form>
+                <li class="nav-item mx-2 dropdown">
+                    <a class="text-decoration-none nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Hola {{Auth::user()->name}}</a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li class="nav-item btn btn-outline-primary my-1 ms-1">
+                            <a class="text-decoration-none text-primary" href="{{route('revisor.home')}}">Revisor <span class="badge rounded-pill bg-warning">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span></a>
+                        </li>
+                        <li class="nav-item my-1 ms-1">
+                            <form action="/logout" method="POST">
+                                @csrf
+                                <button class="btn btn-outline-danger" type="submit">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
                 </li>
                 @else
                 <li class="nav-item mx-2">
