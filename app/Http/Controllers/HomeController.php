@@ -13,7 +13,10 @@ class HomeController extends Controller
 {
     public function index ()
     {
-        $announcements = Announcement::orderBy('id', 'desc')->paginate(5);
+        $announcements = Announcement::where('is_accepted',true)
+                                    ->orderBy('id', 'desc')->paginate(5);
+
+        //$announcements = Announcement::orderBy('id', 'desc')->paginate(5);
         return view('welcome', compact('announcements'));
     }
 
@@ -38,7 +41,14 @@ class HomeController extends Controller
     public function detailCategory($id)
     {
         $category = Category::findOrFail($id);
-        return view('announcements.detailcategory', compact('category'));
+        $announcements = $category->announcements()
+                                    ->where('is_accepted',true)
+                                    ->orderBy('id', 'desc')->paginate(5);
+        
+        return view('announcements.detailcategory', compact('category','announcements'));
+
+        /* $category = Category::findOrFail($id);
+        return view('announcements.detailcategory', compact('category')); */
     }
 
     public function detailAnnouncement($id)
