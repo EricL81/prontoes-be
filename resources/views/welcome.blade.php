@@ -2,8 +2,10 @@
 @section('content')
 
 <div class="container mt-0 mx-0 h-100">
-
     <div class="row vw-100 vh-100 masthead justify-content-center align-items-center mt-3">
+        <div class="col-12 text-center">
+            <h1>{{__('ui.welcome')}}</h1>
+        </div>
         <div class="col-12">
             <ul class="d-flex justify-content-center flex-wrap list-unstyled p-2">
                 @foreach($categories as $category)
@@ -12,7 +14,7 @@
             </ul>
         </div>
         <div class="col-12 text-center">
-            <p>Descubre los 5 ultimos anuncios publicados !</p>
+            <p>{{__('ui.discover')}} !</p>
             <a href="#5ultimos"><i class="arrow down mb-2"></i></a>
         </div>
     </div>
@@ -59,8 +61,7 @@
                                     <span class="text-danger border border-danger rounded-pill p-2">{{$announcement->price}}
                                         €</span>
                                     <span class="btn-grad"><a class="text-decoration-none text-white"
-                                            href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">Ver
-                                            anuncio</a></span>
+                                            href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">{{__('ui.adDetail')}}</a></span>
                                 </div>
                             
                             </div>

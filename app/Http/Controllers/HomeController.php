@@ -11,15 +11,6 @@ use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller
 {
-    public function index ()
-    {
-        $announcements = Announcement::where('is_accepted',true)
-                                    ->orderBy('id', 'desc')->paginate(5);
-
-        //$announcements = Announcement::orderBy('id', 'desc')->paginate(5);
-        return view('welcome', compact('announcements'));
-    }
-
     public function newAnnouncement ()
     {
         return view('announcements.new');
@@ -38,18 +29,7 @@ class HomeController extends Controller
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
     }
 
-    public function detailCategory($id)
-    {
-        $category = Category::findOrFail($id);
-        $announcements = $category->announcements()
-                                    ->where('is_accepted',true)
-                                    ->orderBy('id', 'desc')->paginate(5);
-        
-        return view('announcements.detailcategory', compact('category','announcements'));
 
-        /* $category = Category::findOrFail($id);
-        return view('announcements.detailcategory', compact('category')); */
-    }
 
     public function detailAnnouncement($id)
     {

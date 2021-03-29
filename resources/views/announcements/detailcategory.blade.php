@@ -3,7 +3,7 @@
 <div class="container h-100 mt-4">
     <div class="row mb-4">
         <div class='col-12 text-center'>
-            <h1>Todos los anuncios de {{$category->name}}</h1>
+            <h1>{{__('ui.allAdsFrom')}} {{$category->name}}</h1>
         </div>
     </div>
     <div class="row justify-content-center align-items-center">
@@ -48,21 +48,20 @@
                                     <span class="text-danger border border-danger rounded-pill p-2">{{$announcement->price}}
                                         €</span>
                                     <span class="btn-grad"><a class="text-decoration-none text-white"
-                                            href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">Ver
-                                            anuncio</a></span>
+                                            href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">{{__('ui.adDetail')}}</a></span>
                                 </div>
                             
                             </div>
                             
                             <div class="mt-auto">
                                 <p class="mt-2">
-                                    <small class="text-muted">Publicado por: <a class="text-decoration-none"
+                                    <small class="text-muted">{{__('ui.published')}} <a class="text-decoration-none"
                                             href="{{route('user.home',['id'=>$announcement->user->id])}}"><span
                                                 class="text-success">{{$announcement->user->name}}</span></a></small>
                                 </p>
 
                                 <p class="mt-2">
-                                    <small class="text-muted">Fecha publicación: <a class="text-decoration-none"
+                                    <small class="text-muted">{{__('ui.dateAd')}} <a class="text-decoration-none"
                                             href="#"><span
                                                 class="text-success">{{$announcement->created_at->format('d/m/Y')}}</span></a></small>
                                 </p>
@@ -75,7 +74,7 @@
         @empty
         <div class="row">
             <div class="col-12 col-md-4 offset md-4">
-                <p>No hay anuncios en esa categoria</p>
+                <p>{{__('ui.noAdsinCategory')}}</p>
             </div>
         </div>
         @endforelse
