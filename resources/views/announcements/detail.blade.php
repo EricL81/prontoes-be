@@ -3,7 +3,7 @@
 <div class="container mt-4">
     <div class="row align-items-center">
         <div class="col-12">
-            <div class="card mb-3">
+            <div class="card mb-3 mycard">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -45,7 +45,7 @@
                             <div class="mt-auto">
                                 <p class="mt-2">
                                     <small class="text-muted">Publicado por: <a class="text-decoration-none"
-                                            href="#"><span
+                                            href="{{route('user.home',['id'=>$announcement->user->id])}}"><span
                                                 class="text-success">{{$announcement->user->name}}</span></a></small>
                                 </p>
 

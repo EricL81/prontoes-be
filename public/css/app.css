@@ -10852,6 +10852,7 @@ body, html {
   height: 10rem;
   box-shadow: 0 8px 32px 0 rgba(4, 11, 109, 0.37);
   border-radius: 3rem;
+  opacity: 0.75;
 }
 
 .linav a {
@@ -10862,10 +10863,8 @@ body, html {
   transition: 0.3s;
 }
 
-.linav:hover a {
-  height: 100%;
-  width: 100%;
-  border-radius: 3rem;
+.linav:hover {
+  opacity: 1;
 }
 
 .arrow {

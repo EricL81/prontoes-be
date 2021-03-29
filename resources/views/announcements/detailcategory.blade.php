@@ -9,7 +9,7 @@
     <div class="row justify-content-center align-items-center">
         @forelse($category->announcements as $announcement)
         <div class="col-12 col-md-6">
-            <div class="card mb-3" style="max-width: 650px;">
+            <div class="card mb-3 mycard" style="max-width: 650px;">
                 <div class="row g-0">
                     <div class="col-md-4">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
@@ -43,9 +43,6 @@
                         <div class="card-body d-flex flex-column h-100">
                             <div>
                                 <h5 class="card-title">{{$announcement->name}}</h5>
-                                <h6 class="fst-italic"><a
-                                        href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a>
-                                </h6>
                                 <p class="card-text">{{$announcement->description}}</p>
                                 <div class="d-flex justify-content-between mt-5">
                                     <span class="text-danger border border-danger rounded-pill p-2">{{$announcement->price}}
@@ -60,7 +57,7 @@
                             <div class="mt-auto">
                                 <p class="mt-2">
                                     <small class="text-muted">Publicado por: <a class="text-decoration-none"
-                                            href="#"><span
+                                            href="{{route('user.home',['id'=>$announcement->user->id])}}"><span
                                                 class="text-success">{{$announcement->user->name}}</span></a></small>
                                 </p>
 

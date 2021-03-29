@@ -2,21 +2,11 @@
 @section('content')
 
 <div class="container mt-0 mx-0 h-100">
-
-    <div class="row vw-100 vh-100 masthead justify-content-center align-items-center mt-3">
-        <div class="col-12">
-            <ul class="d-flex justify-content-center flex-wrap list-unstyled p-2">
-                @foreach($categories as $category)
-                <li class="m-3 flex-shrink-0 d-flex linav" style="background-image: url('/img/{{$category->foto}}');"><a class="text-decoration-none text-white fs-3 fw-bold align-items-center d-flex justify-content-center" href="{{route('detailCategory',['id'=>$category->id])}}"><span>{{$category->name}}</span></a></li>
-                @endforeach
-            </ul>
-        </div>
-        <div class="col-12 text-center">
-            <p>Descubre los 5 ultimos anuncios publicados !</p>
-            <a href="#5ultimos"><i class="arrow down mb-2"></i></a>
+<div class="row mb-2 mt-2">
+        <div class='col-12 text-center mt-3'>
+            <h1>Todos los anuncios de {{$user->name}}</h1>
         </div>
     </div>
-
     <div class="row mt-5 vw-100 justify-content-center align-items-top" id="5ultimos">
         @foreach($announcements as $announcement)
         <div class="col-12 col-md-6">
@@ -50,7 +40,13 @@
                     <div class="col-md-8">
                         <div class="card-body d-flex flex-column h-100">
                             <div>
-                                <h5 class="card-title">{{$announcement->name}}</h5>
+                                <h5 class="card-title">{{$announcement->name}}
+                                    @if($announcement->is_accepted)
+                                    <span class="badge bg-success">Aceptado</span>
+                                    @else
+                                    <span class="badge bg-danger">Rechazado</span>
+                                    @endif                               
+                                </h5>
                                 <h6 class="fst-italic"><a
                                         href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a>
                                 </h6>
@@ -66,12 +62,6 @@
                             </div>
                             
                             <div class="mt-auto">
-                                <p class="mt-2">
-                                    <small class="text-muted">Publicado por: <a class="text-decoration-none"
-                                            href="{{route('user.home',['id'=>$announcement->user->id])}}"><span
-                                                class="text-success">{{$announcement->user->name}}</span></a></small>
-                                </p>
-
                                 <p class="mt-2">
                                     <small class="text-muted">Fecha publicación: <a class="text-decoration-none"
                                             href="#"><span

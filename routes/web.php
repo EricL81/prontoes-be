@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\RevisorController;
 
 
@@ -25,6 +26,9 @@ Route::get('/announcement/detail/{id}',[HomeController::class,'detailAnnouncemen
 Route::get('/revisor',[RevisorController::class,'index'])->name('revisor.home');
 Route::post('/revisor/announcement/{id}/accept',[RevisorController::class,'accept'])->name('revisor.announcement.accept');
 Route::post('/revisor/announcement/{id}/reject',[RevisorController::class,'reject'])->name('revisor.announcement.reject');
+
+Route::get('/user/{id}/announcements',[UserController::class,'index'])->name('user.home');
+
 
 
 
