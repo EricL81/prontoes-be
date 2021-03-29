@@ -48,25 +48,36 @@
                         </div>
                     </div>
                     <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title">{{$announcement->name}}</h5>
-                            <h6 class="fst-italic"><a
-                                    href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a>
-                            </h6>
-                            <p class="card-text">{{$announcement->description}}</p>
-                            <div class="d-flex justify-content-between mt-5">
-                                <span class="text-danger border border-danger rounded-pill p-2">{{$announcement->price}}
-                                    €</span>
-                                <span class="btn-grad"><a class="text-decoration-none text-white"
-                                        href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">Ver
-                                        anuncio</a></span>
+                        <div class="card-body d-flex flex-column h-100">
+                            <div>
+                                <h5 class="card-title">{{$announcement->name}}</h5>
+                                <h6 class="fst-italic"><a
+                                        href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a>
+                                </h6>
+                                <p class="card-text">{{$announcement->description}}</p>
+                                <div class="d-flex justify-content-between mt-5">
+                                    <span class="text-danger border border-danger rounded-pill p-2">{{$announcement->price}}
+                                        €</span>
+                                    <span class="btn-grad"><a class="text-decoration-none text-white"
+                                            href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">Ver
+                                            anuncio</a></span>
+                                </div>
+                            
                             </div>
+                            
+                            <div class="mt-auto">
+                                <p class="mt-2">
+                                    <small class="text-muted">Publicado por: <a class="text-decoration-none"
+                                            href="#"><span
+                                                class="text-success">{{$announcement->user->name}}</span></a></small>
+                                </p>
 
-                            <p class="mt-2 mb-0">
-                                <small class="text-muted">Fecha publicación: <a class="text-decoration-none"
-                                        href="#"><span
-                                            class="text-success">{{$announcement->created_at->format('d/m/Y')}}</span></a></small>
-                            </p>
+                                <p class="mt-2">
+                                    <small class="text-muted">Fecha publicación: <a class="text-decoration-none"
+                                            href="#"><span
+                                                class="text-success">{{$announcement->created_at->format('d/m/Y')}}</span></a></small>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>

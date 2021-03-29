@@ -53,8 +53,8 @@
                     <a class="text-decoration-none nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-bs-toggle="dropdown" aria-expanded="false">Hola {{Auth::user()->name}}</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li class="nav-item btn btn-outline-primary my-1 ms-1">
-                            <a class="text-decoration-none text-primary" href="{{route('revisor.home')}}">Revisor <span class="badge rounded-pill bg-warning">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span></a>
+                        <li class="nav-item my-1 ms-1">
+                            <a class="text-decoration-none btn btn-outline-primary" href="{{route('revisor.home')}}">Revisor <span class="badge rounded-pill bg-warning">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span></a>
                         </li>
                         <li class="nav-item my-1 ms-1">
                             <form action="/logout" method="POST">
