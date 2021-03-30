@@ -13,7 +13,8 @@ class HomeController extends Controller
 {
     public function newAnnouncement ()
     {
-        return view('announcements.new');
+        $uniqueSecret = base_convert(sha1(uniqid(mt_rand())),16,36);
+        return view('announcements.new', compact('uniqueSecret'));
     }
     
     public function createAnnouncement(AnnouncementRequest $request)
@@ -25,6 +26,7 @@ class HomeController extends Controller
         $a->user_id = Auth::id();
         $a->category_id = $request->input('category');
         $a->save();
+        $uniqueSecret = $request->input('uniqueSecret');
         
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito');
     }
@@ -35,5 +37,18 @@ class HomeController extends Controller
     {
         $announcement = Announcement::findOrFail($id);
         return view('announcements.detail', compact('announcement'));
+    }
+
+
+    public function uploadImages(Request $request)
+    {
+
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->file('file')->store('public/temp/{$uniqueSecret}');
+        session()->push("images.{$uniqueSecret}", $fileName);
+        return response()->json(
+            session()->get("images.{$uniqueSecret}")
+            
+        );    
     }
 }
