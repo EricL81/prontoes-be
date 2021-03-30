@@ -9,7 +9,7 @@
         <div class="col-12">
             <ul class="d-flex justify-content-center flex-wrap list-unstyled p-2">
                 @foreach($categories as $category)
-                <li class="m-3 flex-shrink-0 d-flex linav" style="background-image: url('/img/{{$category->foto}}');"><a class="text-decoration-none text-white fs-3 fw-bold align-items-center d-flex justify-content-center" href="{{route('detailCategory',['id'=>$category->id])}}"><span>{{$category->name}}</span></a></li>
+                <li class="m-3 flex-shrink-0 d-flex linav" style="background-image: url('/img/{{$category->foto}}');"><a class="text-decoration-none text-white fs-3 fw-bold align-items-center d-flex justify-content-center" href="{{route('detailCategory',['id'=>$category->id])}}"><span>{{__("ui.{$category->name}")}}</span></a></li>
                 @endforeach
             </ul>
         </div>
@@ -54,7 +54,7 @@
                             <div>
                                 <h5 class="card-title">{{$announcement->name}}</h5>
                                 <h6 class="fst-italic"><a
-                                        href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a>
+                                        href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{__("ui.{$announcement->category->name}")}}</a>
                                 </h6>
                                 <p class="card-text">{{$announcement->description}}</p>
                                 <div class="d-flex justify-content-between mt-5">
