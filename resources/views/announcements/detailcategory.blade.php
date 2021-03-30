@@ -3,7 +3,7 @@
 <div class="container h-100 mt-4">
     <div class="row mb-4">
         <div class='col-12 text-center'>
-            <h1>{{__('ui.allAdsFrom')}} {{$category->name}}</h1>
+            <h1>{{__('ui.allAdsFrom')}} {{__("ui.{$category->name}")}}</h1>
         </div>
     </div>
     <div class="row justify-content-center align-items-center">

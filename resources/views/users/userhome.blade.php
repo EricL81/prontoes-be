@@ -48,7 +48,7 @@
                                     @endif                               
                                 </h5>
                                 <h6 class="fst-italic"><a
-                                        href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a>
+                                        href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{__("ui.{$announcement->category->name}")}}</a>
                                 </h6>
                                 <p class="card-text">{{$announcement->description}}</p>
                                 <div class="d-flex justify-content-between mt-5">

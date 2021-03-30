@@ -139,7 +139,7 @@ return [
         ],
 
         'email' => [
-            'required' => 'We need to know your e-mail address!',
+            'required' => 'Necesitamos saber tu correo.',
         ],
     ],
 

@@ -35,7 +35,7 @@
 
                             <div>
                                 <h5 class="card-title">{{$announcement->name}}</h5>
-                                <h6 class="fst-italic"><a href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{$announcement->category->name}}</a></h6>
+                                <h6 class="fst-italic"><a href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{__("ui.{$announcement->category->name}")}}</a></h6>
                                 <p class="card-text">{{$announcement->description}}</p>
                                 <span class="text-danger border border-danger rounded-pill p-2">{{$announcement->price}}
                                     €</span>

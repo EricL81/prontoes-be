@@ -10,11 +10,12 @@ class PublicController extends Controller
 {
     public function index ()
     {
+        $categories = Category::all();
         $announcements = Announcement::where('is_accepted',true)
                                     ->orderBy('id', 'desc')->paginate(5);
 
         //$announcements = Announcement::orderBy('id', 'desc')->paginate(5);
-        return view('welcome', compact('announcements'));
+        return view('welcome', compact('announcements','categories'));
     }
 
     public function detailCategory($id)
