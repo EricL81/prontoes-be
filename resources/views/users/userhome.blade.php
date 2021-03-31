@@ -62,7 +62,7 @@
                             
                             <div class="mt-auto">
                                 <p class="mt-2">
-                                    <small class="text-muted">{{__('ui.dateAd')}} <a class="text-decoration-none"
+                                    <small class="text-muted">{{__('ui.dateAd')}}: <a class="text-decoration-none"
                                             href="#"><span
                                                 class="text-success">{{$announcement->created_at->format('d/m/Y')}}</span></a></small>
                                 </p>

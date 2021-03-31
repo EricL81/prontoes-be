@@ -44,13 +44,13 @@
 
                             <div class="mt-auto">
                                 <p class="mt-2">
-                                    <small class="text-muted">{{__('ui.published')}} <a class="text-decoration-none"
+                                    <small class="text-muted">{{__('ui.published')}}: <a class="text-decoration-none"
                                             href="{{route('user.home',['id'=>$announcement->user->id])}}"><span
                                                 class="text-success">{{$announcement->user->name}}</span></a></small>
                                 </p>
 
                                 <p class="mt-2">
-                                    <small class="text-muted">{{__('ui.dateAd')}} <a class="text-decoration-none"
+                                    <small class="text-muted">{{__('ui.dateAd')}}: <a class="text-decoration-none"
                                             href="#"><span
                                                 class="text-success">{{$announcement->created_at->format('d/m/Y')}}</span></a></small>
                                 </p>
