@@ -62,7 +62,6 @@ class HomeController extends Controller
 
     public function uploadImages(Request $request)
     {
-        dd($request->all());
 
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store('public/temp/{$uniqueSecret}');
