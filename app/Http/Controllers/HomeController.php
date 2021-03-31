@@ -65,7 +65,20 @@ class HomeController extends Controller
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json(
             session()->get("images.{$uniqueSecret}")
+            /* [
+                'id'=>$filename
+            ] */
             
         );    
     }
+
+
+/* public function removeImages(Request $request)
+{       
+    $uniqueSecret = $request->input('uniqueSecret');
+    $fileName = $request->input('id');
+    session()->push("removedImages.{$uniqueSecret}", $fileName);
+    Storage::delete($fileName);
+    return response()->json('ok');
+} */
 }
