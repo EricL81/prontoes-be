@@ -33,7 +33,7 @@ Route::get('/user/{id}/announcements',[UserController::class,'index'])->name('us
 Route::post('/locale/{locale}',[PublicController::class,'locale'])->name('locale');
 
 Route::post('/announcement/images/upload',[HomeController::class,'uploadImages'])->name('announcement.images.upload');
-
+Route::delete('/announcement/images/remove', [HomeController::class,'removeImages'])->name('announcement.images.remove');
 
 
 

@@ -29,11 +29,14 @@ class HomeController extends Controller
         $a->user_id = Auth::id();
         $a->category_id = $request->input('category');
         $a->save();
+
         $uniqueSecret = $request->input('uniqueSecret');
         $images = session()->get("images.{$uniqueSecret}");
+        $removedImages = session()->get("removedImages.{$uniqueSecret}");
+        $images = array_diff($images, $removedImages);
+
 
         foreach($images as $image){
-            
             $i = new AnnouncementImage;
             $fileName = basename($image);
             $newFilePath = "public/announcements/{$a->id}/{$fileName}";
@@ -59,13 +62,27 @@ class HomeController extends Controller
 
     public function uploadImages(Request $request)
     {
+        dd($request->all());
 
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->file('file')->store('public/temp/{$uniqueSecret}');
         session()->push("images.{$uniqueSecret}", $fileName);
         return response()->json(
-            session()->get("images.{$uniqueSecret}")
-            
+
+            [
+                'id' => $fileName
+            ]
         );    
+    }
+
+
+    public function removeImages(Request $request)
+    {       
+        $uniqueSecret = $request->input('uniqueSecret');
+        $fileName = $request->input('id');
+        session()->push("removedImages.{$uniqueSecret}", $fileName);
+        Storage::delete($fileName);
+        return response()->json('ok');
+        
     }
 }
