@@ -14,9 +14,13 @@ use App\Http\Requests\AnnouncementRequest;
 
 class HomeController extends Controller
 {
-    public function newAnnouncement ()
+    public function newAnnouncement (Request $request)
     {
-        $uniqueSecret = base_convert(sha1(uniqid(mt_rand())),16,36);
+        $uniqueSecret = $request->old(
+            'uniqueSecret',
+            base_convert(sha1(uniqid(mt_rand())),16,36)
+        );
+
         return view('announcements.new', compact('uniqueSecret'));
     }
     
@@ -31,8 +35,10 @@ class HomeController extends Controller
         $a->save();
 
         $uniqueSecret = $request->input('uniqueSecret');
+        
         $images = session()->get("images.{$uniqueSecret}");
-        $removedImages = session()->get("removedImages.{$uniqueSecret}");
+        $removedImages = session()->get("removedImages.{$uniqueSecret}",[]);
+
         $images = array_diff($images, $removedImages);
 
 
@@ -83,5 +89,25 @@ class HomeController extends Controller
         Storage::delete($fileName);
         return response()->json('ok');
         
+    }
+
+    public function getImages(Request $request)
+    {
+        $uniqueSecret = $request->input('uniqueSecret');
+        $images = session()->get("images.{$uniqueSecret}",[]);
+        $removedImages = session()->get("removedImages.{$uniqueSecret}",[]);
+        $images = array_diff($images, $removedImages);
+
+        $data = [];
+
+
+        foreach($images as $image){
+            $data[] = [
+                'id' => $image,
+                'src' => Storage::url($image)
+            ];
+        }
+
+        return response()->json($data);
     }
 }

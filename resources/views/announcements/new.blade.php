@@ -43,9 +43,7 @@
                 <div class="mb-3">
                     <label for="exampleInputdescription1" class="form-label">{{__("ui.description")}}</label>
                     <textarea name="description" row="5" type="text" class="form-control text-start"
-                        id="exampleInputdescription1">
-                    {{old('description')}}
-                    </textarea>
+                        id="exampleInputdescription1">{{old('description')}}</textarea>
                     <div id="nameHelp" class="form-text">
                         @error('description')
                         <div class="alert alert-danger">{{ $message }}</div>
