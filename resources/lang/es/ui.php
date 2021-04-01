@@ -9,7 +9,7 @@ return [
     'register'=>'Regístrate',
     'logout'=>'Salir',
     'revisor'=>'Revisor',
-    'hello'=>'Hola,',
+    'hello'=>'Hola, ',
     'signIn'=>'Iniciar sesión en Pronto.es',
     'signUp'=>'Registrate en Pronto.es',
     'email'=>'Dirección de correo electrónico',

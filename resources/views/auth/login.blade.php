@@ -20,7 +20,7 @@
             <form action="/login" method="POST">
                 @csrf
                 <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label">{{__('ui.hello')}}</label>
+                    <label for="exampleInputEmail1" class="form-label">{{__('ui.email')}}</label>
                     <input name="email" type="email" class="form-control" id="exampleInputEmail1"
                         aria-describedby="emailHelp">
                     <div id="emailHelp" class="form-text">{{__('ui.neverShareEmail')}}</div>
@@ -36,7 +36,7 @@
     </div>
     <div class="row">
         <div class="col-12 col-md-4 offset-md-4 text-center mt-3">
-            <h6>{{__('ui.noAccount')}}<a href="/register">{{__('ui.registerHere')}}</a></h6>
+            <h6>{{__('ui.noAccount')}} <a href="/register">{{__('ui.registerHere')}}</a></h6>
         </div>
     </div>
 </div>

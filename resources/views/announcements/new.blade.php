@@ -61,7 +61,7 @@
                     </div>
                 </div>
                 <div class="mb-3">
-                    <label for="announcementImages" class="form-label">Imagenes</label>
+                    <label for="announcementImages" class="form-label">{{__("ui.images")}}</label>
                     <div class="dropzone" id="drophere"></div>
                     @error('images')
                     <small class="alert alert-danger">{{ $message }}</small>

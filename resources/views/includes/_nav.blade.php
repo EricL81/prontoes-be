@@ -9,6 +9,7 @@
             @include('includes._locale',["lang"=>'es',"nation"=>'es'])
             @include('includes._locale',["lang"=>'en',"nation"=>'gb'])
             @include('includes._locale',["lang"=>'it',"nation"=>'it'])
+            @include('includes._locale',["lang"=>'fr',"nation"=>'fr'])
         </ul>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav mb-2 mb-lg-0">
