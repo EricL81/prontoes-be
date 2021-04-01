@@ -28,7 +28,8 @@ class AnnouncementRequest extends FormRequest
     return [
         'name'=>'required|string|max:120',
         'description'=>'required|string|max:500',
-        'price'=>'required'
+        'price'=>'required',
+        'category'=>'required'
     ];
     }
 }

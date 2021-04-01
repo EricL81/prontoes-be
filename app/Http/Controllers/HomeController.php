@@ -36,7 +36,7 @@ class HomeController extends Controller
 
         $uniqueSecret = $request->input('uniqueSecret');
         
-        $images = session()->get("images.{$uniqueSecret}");
+        $images = session()->get("images.{$uniqueSecret}",[]);
         $removedImages = session()->get("removedImages.{$uniqueSecret}",[]);
 
         $images = array_diff($images, $removedImages);
@@ -104,7 +104,9 @@ class HomeController extends Controller
         foreach($images as $image){
             $data[] = [
                 'id' => $image,
-                'src' => Storage::url($image)
+                'name' => basename($image),
+                'src' => Storage::url($image),
+                'size' => Storage::size($image)
             ];
         }
 

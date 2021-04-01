@@ -45,18 +45,11 @@
                             <div class="col-12 col-md-9 d-flex justifify-content-center">
                                 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                     <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="https://via.placeholder.com/300x240"
-                                                class="d-block mw-100 image-fluid" alt="...">
+                                    @foreach ($announcement->images as $image)
+                                        <div class="carousel-item @if($loop->first)active @endif">
+                                            <img src="{{Storage::url($image->file)}}" class="d-block image-fluid" alt="...">
                                         </div>
-                                        <div class="carousel-item">
-                                            <img src="https://via.placeholder.com/300x240"
-                                                class="d-block mw-100 image-fluid" alt="...">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img src="https://via.placeholder.com/300x240"
-                                                class="d-block mw-100 image-fluid" alt="...">
-                                        </div>
+                                    @endforeach
                                     </div>
                                     <button class="carousel-control-prev" type="button"
                                         data-bs-target="#carouselExampleControls" data-bs-slide="prev">

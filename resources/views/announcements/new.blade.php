@@ -17,7 +17,7 @@
                 <div class="mb-3">
                     <label for="category" class="form-label">{{__("ui.categorie")}}</label>
                     <select name="category" id="category" class="form-select" aria-label="Default select example">
-                        <option selected>{{__("ui.selectCategorie")}}</option>
+                        <option value="" selected>{{__("ui.selectCategorie")}}</option>
                         @foreach($categories as $category)
                         <option value="{{$category->id}}" {{old('category') == $category->id ? 'selected' : ''}}>
                             {{__("ui.{$category->name}")}}

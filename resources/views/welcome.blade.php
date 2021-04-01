@@ -27,15 +27,11 @@
                     <div class="col-md-4">
                         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid border rounded-3" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid border rounded-3" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid border rounded-3" alt="...">
-                                </div>
+                                @foreach ($announcement->images as $image)
+                                    <div class="carousel-item @if($loop->first)active @endif">
+                                        <img src="{{Storage::url($image->file)}}" class="d-block image-fluid" alt="...">
+                                    </div>
+                                @endforeach             
                             </div>
                             <button class="carousel-control-prev" type="button"
                                 data-bs-target="#carouselExampleControls" data-bs-slide="prev">
