@@ -2,19 +2,19 @@
 @section('content')
 
 <div class="container mt-0 mx-0 h-100">
-    <div class="row vw-100 vh-100 masthead justify-content-center align-items-center mt-3">
+    <div class="row vw-100 vh-100 masthead justify-content-center align-items-center m-0">
         <div class="col-12 text-center">
-            <h1>{{__('ui.welcome')}}</h1>
+            <h1 class="m-0">{{__('ui.welcome')}}</h1>
         </div>
         <div class="col-12">
-            <ul class="d-flex justify-content-center flex-wrap list-unstyled p-2">
+            <ul class="d-flex justify-content-center flex-wrap list-unstyled m-0">
                 @foreach($categories as $category)
                 <li class="m-3 flex-shrink-0 d-flex linav" style="background-image: url('/img/{{$category->foto}}');"><a class="text-decoration-none text-white fs-3 fw-bold align-items-center d-flex justify-content-center" href="{{route('detailCategory',['id'=>$category->id])}}"><span>{{__("ui.{$category->name}")}}</span></a></li>
                 @endforeach
             </ul>
         </div>
-        <div class="col-12 text-center">
-            <p>{{__('ui.discover')}} !</p>
+        <div class="col-12 text-center mb-4">
+            <p class="m-2">{{__('ui.discover')}} !</p>
             <a href="#5ultimos"><i class="arrow down mb-2"></i></a>
         </div>
     </div>
@@ -29,7 +29,7 @@
                             <div class="carousel-inner">
                                 @foreach ($announcement->images as $image)
                                     <div class="carousel-item @if($loop->first)active @endif">
-                                        <img src="{{Storage::url($image->file)}}" class="d-block image-fluid" alt="...">
+                                        <img src="{{$image->getUrl(300,150)}}" class="d-block img-fluid" alt="...">
                                     </div>
                                 @endforeach             
                             </div>
