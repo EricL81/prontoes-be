@@ -12,7 +12,7 @@ class PublicController extends Controller
     {
         $categories = Category::all();
         $announcements = Announcement::where('is_accepted',true)
-                                    ->orderBy('id', 'desc')->paginate(5);
+                                    ->orderBy('id', 'desc')->paginate(4);
 
         //$announcements = Announcement::orderBy('id', 'desc')->paginate(5);
         return view('welcome', compact('announcements','categories'));
@@ -23,7 +23,7 @@ class PublicController extends Controller
         $category = Category::findOrFail($id);
         $announcements = $category->announcements()
                                     ->where('is_accepted',true)
-                                    ->orderBy('id', 'desc')->paginate(5);
+                                    ->orderBy('id', 'desc')->paginate(4);
         
         return view('announcements.detailcategory', compact('category','announcements'));
 

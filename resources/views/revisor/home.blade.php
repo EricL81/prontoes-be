@@ -15,7 +15,8 @@
                         </div>
                         <div class="col-12 col-md-9 d-flex">
                             <p><span class="text-muted">{{__("ui.user")}} id: </span>#{{$announcement->user->id}}</p>
-                            <p class="mx-4"><span class="text-muted">{{__("ui.name")}}: </span>{{$announcement->user->name}}</p>
+                            <p class="mx-4"><span class="text-muted">{{__("ui.name")}}:
+                                </span>{{$announcement->user->name}}</p>
                             <p><span class="text-muted">{{__("ui.email")}}: </span>{{$announcement->user->email}}</p>
                         </div>
                     </div>
@@ -39,31 +40,17 @@
                     </div>
                     <hr>
                     <div class="row">
-                            <div class="col-12 col-md-3 d-flex align-items-center">
-                                <h3>{{__("ui.images")}}</h3>
-                            </div>
-                            <div class="col-12 col-md-9 d-flex justifify-content-center">
-                                <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                                    <div class="carousel-inner">
-                                    @foreach ($announcement->images as $image)
-                                        <div class="carousel-item @if($loop->first)active @endif">
-                                            <img src="{{$image->getUrl(300,150)}}" class="img-fluid" alt="...">
-                                        </div>
-                                    @endforeach
-                                    </div>
-                                    <button class="carousel-control-prev" type="button"
-                                        data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button"
-                                        data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
-                                </div>
-                            </div>
+                        <div class="col-12 col-md-3 d-flex align-items-center">
+                            <h3>{{__("ui.images")}}</h3>
                         </div>
+                        <div class="col-12 col-md-9">
+                            @foreach ($announcement->images as $image)
+                            <div>
+                                <img class="border rounded-3 my-2 img-fluid" src="{{$image->getUrl(300,150)}}" alt="...">
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -11,7 +11,7 @@ class UserController extends Controller
     {
         $user = User::findOrFail($id);
 
-        $announcements = $user->announcements()->paginate(5);
+        $announcements = $user->announcements()->paginate(4);
 
         return view('users.userhome', compact('user','announcements'));
     }
