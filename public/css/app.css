@@ -12741,6 +12741,11 @@ body, html {
   text-decoration: none;
 }
 
+.carousel-center {
+  display: grid;
+  place-items: center;
+}
+
 .dropzone, .dropzone * {
   box-sizing: border-box;
 }

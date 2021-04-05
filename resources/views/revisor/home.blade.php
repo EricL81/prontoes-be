@@ -46,7 +46,7 @@
                         <div class="col-12 col-md-9">
                             @foreach ($announcement->images as $image)
                             <div>
-                                <img class="border rounded-3 my-2 img-fluid" src="{{$image->getUrl(300,150)}}" alt="...">
+                                <img class="border rounded-3 my-2 img-fluid" src="{{$image->getUrl(300,380)}}" alt="...">
                             </div>
                             @endforeach
                         </div>

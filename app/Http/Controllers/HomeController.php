@@ -49,7 +49,7 @@ class HomeController extends Controller
             $newFilePath = "public/announcements/{$a->id}/{$fileName}";
             Storage::move($image,$newFilePath);
 
-            dispatch(new ResizeImage($newFilePath,300,150));
+            dispatch(new ResizeImage($newFilePath,300,380));
 
             $i->file = $newFilePath;
             $i->announcement_id = $a->id;
