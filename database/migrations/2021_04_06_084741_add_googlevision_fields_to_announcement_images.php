@@ -14,7 +14,13 @@ class AddGooglevisionFieldsToAnnouncementImages extends Migration
     public function up()
     {
         Schema::table('announcement_images', function (Blueprint $table) {
-            //
+            
+            $table->text('labels')->nullable()->after('announcement_id');
+            $table->string('adult')->nullable()->after('announcement_id');
+            $table->string('spoof')->nullable()->after('announcement_id');
+            $table->string('medical')->nullable()->after('announcement_id');
+            $table->string('violence')->nullable()->after('announcement_id');
+            $table->string('racy')->nullable()->after('announcement_id');
         });
     }
 
@@ -26,7 +32,9 @@ class AddGooglevisionFieldsToAnnouncementImages extends Migration
     public function down()
     {
         Schema::table('announcement_images', function (Blueprint $table) {
-            //
+            
+            $table->dropColumn(['labels','adult','spoof','medical','violence','racy']);
+
         });
     }
 }
