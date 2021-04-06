@@ -6,13 +6,13 @@
         <div class="col-12 text-center">
             <h1 class="m-0">{{__('ui.welcome')}}</h1>
         </div>
+        @foreach($categories as $category)
         <div class="col-12">
             <ul class="d-flex justify-content-center flex-wrap list-unstyled m-0">
-                @foreach($categories as $category)
                 <li class="m-3 flex-shrink-0 d-flex linav" style="background-image: url('/img/{{$category->foto}}');"><a class="text-decoration-none text-white fs-3 fw-bold align-items-center d-flex justify-content-center" href="{{route('detailCategory',['id'=>$category->id])}}"><span>{{__("ui.{$category->name}")}}</span></a></li>
-                @endforeach
             </ul>
         </div>
+        @endforeach
         <div class="col-12 text-center mb-4">
             <p class="m-2">{{__('ui.discover')}} !</p>
             <a href="#5ultimos"><i class="arrow down mb-2"></i></a>
@@ -25,25 +25,7 @@
             <div class="card my-3 mycard" style="max-width:650px;">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                @foreach ($announcement->images as $image)
-                                    <div class="carousel-item @if($loop->first)active @endif">
-                                        <img src="{{$image->getUrl(300,380)}}" alt="...">
-                                    </div>
-                                @endforeach             
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                        <img class="img-fluid h-100" src="{{$announcement->images->first()->getUrl(300,380)}}" alt="...">
                     </div>
                     <div class="col-md-8">
                         <div class="card-body d-flex flex-column h-100">

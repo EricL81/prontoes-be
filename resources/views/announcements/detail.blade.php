@@ -6,17 +6,13 @@
             <div class="card mb-3 mycard">
                 <div class="row g-0">
                     <div class="col-md-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+                    <div id="carouselExampleControls" class="carousel slide carousel-fade" data-bs-ride="carousel">
                             <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://via.placeholder.com/500x400" class="d-block w-100 image-fluid" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/500x400" class="d-block w-100 image-fluid" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/500x400" class="d-block w-100 image-fluid" alt="...">
-                                </div>
+                                @foreach ($announcement->images as $image)
+                                    <div class="carousel-item @if($loop->first)active @endif">
+                                        <img class="img-fluid" src="{{$image->getUrl(500,400)}}" alt="...">
+                                    </div>
+                                @endforeach             
                             </div>
                             <button class="carousel-control-prev" type="button"
                                 data-bs-target="#carouselExampleControls" data-bs-slide="prev">
