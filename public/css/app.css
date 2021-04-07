@@ -12652,6 +12652,10 @@ textarea.form-control-lg {
   background-image: url(/images/vendor/flag-icon-css/flags/1x1/xk.svg?48269c0b55c2532ccb7608a0fc28a5c2);
 }
 
+:root {
+  --main-color: #7F6BF6;
+}
+
 body, html {
   margin: 0;
   padding: 0;
@@ -12659,6 +12663,10 @@ body, html {
   /*     background-color: #99D2A5e3;
   background-image: linear-gradient(0deg, #a9ffeae3 30%, #5cc9d6e3 70%); */
   overflow-x: hidden;
+}
+
+.navborder {
+  border-bottom: 0.15rem solid var(--main-color);
 }
 
 .masthead {
@@ -12694,7 +12702,7 @@ body, html {
 }
 
 .arrow {
-  border: solid #3532ef;
+  border: solid var(--main-color);
   border-width: 0 8px 8px 0;
   display: inline-block;
   padding: 8px;
@@ -12719,20 +12727,22 @@ body, html {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
+/* .btn-grad {
+    background-image: linear-gradient(to right, #3532ef 0%, #89ffbe 51%, #3532ef 100%)
+} */
 .btn-grad {
-  background-image: linear-gradient(to right, #3532ef 0%, #89ffbe 51%, #3532ef 100%);
-}
-
-.btn-grad {
-  padding: 10px 20px;
+  width: 20rem;
+  height: 2rem;
+  /*padding: 1rem 2rem;*/
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 200% auto;
   color: white;
-  box-shadow: 0 0 20px #eee;
-  border-radius: 10px;
+  /*box-shadow: 0 0 20px #eee;*/
+  border-radius: 2.5rem;
   display: block;
+  background: var(--main-color);
 }
 
 .btn-grad:hover {

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-transparent" id="tophome">
+<nav class="navbar navbar-expand-lg navbar-light bg-transparent navborder" id="tophome">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{route('home')}}"><img src="/css/placeholder-logo.png" width="150" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -12,6 +12,21 @@
             @include('includes._locale',["lang"=>'fr',"nation"=>'fr'])
         </ul>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="d-flex list-unstyled align-items-center mb-0">
+
+                @guest
+                <li class="nav-item btn btn-grad me-2">
+                    <a class="text-decoration-none text-white" href='/login'>{{__('ui.newAd')}}</a>
+                </li>
+                @endguest
+
+                @auth
+                <li class="nav-item btn btn-grad me-2">
+                    <a class="text-decoration-none text-white"
+                        href="{{route('newAnnouncement')}}">{{__('ui.newAd')}}</a>
+                </li>
+                @endauth
+            </ul>
             <ul class="navbar-nav mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{route('home')}}">{{__('ui.start')}}</a>
@@ -23,25 +38,14 @@
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         @foreach($categories as $category)
-                        <li><a class="dropdown-item" href="{{route('detailCategory',['id'=>$category->id])}}">{{__("ui.{$category->name}")}}</a></li>
+                        <li><a class="dropdown-item"
+                                href="{{route('detailCategory',['id'=>$category->id])}}">{{__("ui.{$category->name}")}}</a>
+                        </li>
                         @endforeach
                     </ul>
                 </li>
             </ul>
-            <ul class="d-flex list-unstyled align-items-center mb-0">
 
-                @guest
-                <li class="nav-item btn btn-grad me-2">
-                    <a class="text-decoration-none text-white" href='/login'>{{__('ui.newAd')}}</a>
-                </li>
-                @endguest
-
-                @auth
-                <li class="nav-item btn btn-grad me-2">
-                    <a class="text-decoration-none text-white" href="{{route('newAnnouncement')}}">{{__('ui.newAd')}}</a>
-                </li>
-                @endauth
-            </ul>
             <ul class="d-flex list-unstyled align-items-center mb-0">
                 @guest
                 <li class="nav-item btn btn-success me-2">
@@ -59,7 +63,9 @@
                         data-bs-toggle="dropdown" aria-expanded="false">{{__('ui.hello')}} {{Auth::user()->name}}</a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li class="nav-item my-1 ms-1">
-                            <a class="text-decoration-none btn btn-outline-primary" href="{{route('revisor.home')}}">{{__('ui.revisor')}} <span class="badge rounded-pill bg-warning">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span></a>
+                            <a class="text-decoration-none btn btn-outline-primary"
+                                href="{{route('revisor.home')}}">{{__('ui.revisor')}} <span
+                                    class="badge rounded-pill bg-warning">{{\App\Models\Announcement::ToBeRevisionedCount()}}</span></a>
                         </li>
                         <li class="nav-item my-1 ms-1">
                             <form action="/logout" method="POST">
