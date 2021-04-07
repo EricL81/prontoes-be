@@ -3,6 +3,7 @@
         <a class="navbar-brand" href="{{route('home')}}"><img src="/css/placeholder-logo.png" width="150" alt=""></a>
         <a class="nav-link" aria-current="page" href="{{route('home')}}"><i
                 class="bi bi-house-door fs-4 fw-bold house"></i></a>
+        <a class="navbar-brand" href="{{route('home')}}"><img class="ms-3" src="/css/IMA.png" width="100" alt=""></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
