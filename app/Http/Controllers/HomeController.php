@@ -51,7 +51,7 @@ class HomeController extends Controller
             Storage::move($image,$newFilePath);
 
             dispatch(new ResizeImage($newFilePath,300,380));
-            dispatch(new ResizeImage($newFilePath,250,250));
+            dispatch(new ResizeImage($newFilePath,300,300));
             dispatch(new ResizeImage($newFilePath,500,400));
 
             $i->file = $newFilePath;
