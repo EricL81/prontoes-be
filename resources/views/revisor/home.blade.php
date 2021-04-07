@@ -45,20 +45,20 @@
                         </div>
                         <div class="col-12">
                             @foreach ($announcement->images as $image)
-                            <div class="row">
+                            <div class="row mb-2 border-bottom">
                                 <div class="col-md-4">
-                                    <img class="border rounded-3 my-2 img-fluid" src="{{$image->getUrl(250,250)}}" alt="...">
+                                    <img class="border rounded-3 my-2 img-fluid" src="{{$image->getUrl(300,300)}}" alt="...">
                                 </div>
                                 <div class="col-md-8">
-                                    <p class="d-flex align-items-center">Adult: <span class="{{$image->adult}} circle d-inline-block mx-2"></span></p>
-                                    <p class="d-flex align-items-center">Spoof: <span class="{{$image->spoof}} circle d-inline-block mx-2"></span></p>
-                                    <p class="d-flex align-items-center">Medical: <span class="{{$image->medical}} circle d-inline-block mx-2"></span></p>
-                                    <p class="d-flex align-items-center">Violence: <span class="{{$image->violence}} circle d-inline-block mx-2"></span></p>
-                                    <p class="d-flex align-items-center">Racy: <span class="{{$image->racy}} circle d-inline-block mx-2"></span></p>
+                                    <p class="d-flex align-items-center fw-bold">Adult: <span class="{{$image->adult}} circle d-inline-block mx-2"></span></p>
+                                    <p class="d-flex align-items-center fw-bold">Spoof: <span class="{{$image->spoof}} circle d-inline-block mx-2"></span></p>
+                                    <p class="d-flex align-items-center fw-bold">Medical: <span class="{{$image->medical}} circle d-inline-block mx-2"></span></p>
+                                    <p class="d-flex align-items-center fw-bold">Violence: <span class="{{$image->violence}} circle d-inline-block mx-2"></span></p>
+                                    <p class="d-flex align-items-center fw-bold">Racy: <span class="{{$image->racy}} circle d-inline-block mx-2"></span></p>
 
-                                    <p>Id: {{$image->id}}</p>
-                                    <p>Archivo: {{$image->file}}</p>
-                                    <p>URL: {{Storage::url($image->file)}}</p>
+                                    <p><span class="fw-bold">Id: </span>{{$image->id}}</p>
+                                    <p><span class="fw-bold">Archivo: </span>{{$image->file}}</p>
+                                    <p><span class="fw-bold">URL: </span>{{Storage::url($image->file)}}</p>
                                 </div>
                             </div>
                             @endforeach
