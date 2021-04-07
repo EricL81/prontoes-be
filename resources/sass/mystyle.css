@@ -15,6 +15,57 @@ body, html {
     border-bottom: 0.15rem solid var(--main-color);
 }
 
+.house, .profile, .revisor>a {
+    color: var(--main-color);
+}
+
+.idiomas {
+    height: 2.5rem;
+    border: 0.10rem solid var(--main-color);
+    border-radius: 2rem;
+    color: var(--main-color);
+}
+
+.revisor {
+    height: 2rem;
+    width: 7rem;
+    border: 0.10rem solid var(--main-color);
+    border-radius: 2rem;
+    color: var(--main-color);
+}
+
+.revisor:hover, .revisor>a:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+
+.my-badge {
+    background-color: var(--main-color);
+}
+
+.my-badge:hover {
+    background: #5cffa5;
+    color: var(--main-color);
+}
+
+.logout {
+    height: 2rem;
+    width: 7rem;
+    text-align: center;
+    transition: 0.5s;
+    background-size: 400% auto;
+    color: white;
+    border-radius: 2.5rem;
+    display: block;
+}
+
+.logout:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
 .masthead {
     min-width: 100vh;
     background-size: contain;
@@ -73,23 +124,24 @@ body, html {
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-/* .btn-grad {
-    background-image: linear-gradient(to right, #3532ef 0%, #89ffbe 51%, #3532ef 100%)
-} */
+.btn-grad, .logout {
+    background-image: linear-gradient(to right, var(--main-color) 0%, #5cffa5 65%, var(--main-color) 100%)
+}
 
 .btn-grad {
     width: 20rem;
-    height: 2rem;
+    height: 2.5rem;
     /*padding: 1rem 2rem;*/
     text-align: center;
     text-transform: uppercase;
     transition: 0.5s;
-    background-size: 200% auto;
+    background-size: 400% auto;
     color: white;
     /*box-shadow: 0 0 20px #eee;*/
     border-radius: 2.5rem;
     display: block;
-    background: var(--main-color);
+    /*     background: var(--main-color);
+ */
 }
 
 .btn-grad:hover {

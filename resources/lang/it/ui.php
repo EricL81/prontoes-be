@@ -51,4 +51,6 @@ return [
     'accept'=>'Accettare',
     'reject'=>'Rifiuta',
     'noAdsInRevisor'=>'Non ci sono annunci da rivedere.',
+    'languages'=>'Lingue',
+
 ];
