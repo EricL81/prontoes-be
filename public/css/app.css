@@ -12654,8 +12654,8 @@ textarea.form-control-lg {
 
 :root {
   --main-color: #7F6BF6;
-  --main-colordark:#5443b5;
-  --main-black:#232323;
+  --main-colordark: #5443b5;
+  --main-black: #232323;
 }
 
 body, html {
@@ -12676,23 +12676,25 @@ body, html {
 }
 
 .idiomas {
-  height: 2.5rem;
-  border: 0.1rem solid var(--main-color);
-  border-radius: 2rem;
   color: var(--main-color);
+  display: grid;
+  place-items: center;
 }
 
 .revisor {
   height: 2rem;
-  width: 7rem;
+  width: 8rem;
   border: 0.1rem solid var(--main-color);
   border-radius: 2rem;
   color: var(--main-color);
 }
 
-.revisor:hover, .revisor > a:hover {
-  background-color: var(--main-color);
+.revisor a:hover {
   color: white;
+}
+
+.revisor:hover {
+  background-color: var(--main-color);
 }
 
 .my-badge {
@@ -12700,33 +12702,49 @@ body, html {
 }
 
 .my-badge:hover {
-  background: #5cffa5;
+  background: #5cffff;
   color: var(--main-color);
 }
 
-.logout {
+.logout, .register {
   height: 2rem;
-  width: 7rem;
+  width: 8rem;
   text-align: center;
   transition: 0.5s;
   background-size: 400% auto;
   color: white;
   border-radius: 2.5rem;
   display: block;
+  border: none;
 }
 
-.logout:hover {
+.logout:hover, .register:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
 
-.masthead {
-  min-width: 100vh;
-  background-size: contain;
-  background-position: top;
-  background-repeat: no-repeat;
+.formLang {
+  display: inline;
+}
+
+.login {
+  height: 2rem;
+  width: 8rem;
+  color: var(--main-color);
+  height: 2rem;
+  border: 0.1rem solid var(--main-color);
+  border-radius: 2rem;
+}
+
+.login:hover {
+  background-color: var(--main-color);
+  color: white;
+}
+
+::marker {
+  color: var(--main-color);
 }
 
 .linav {
@@ -12780,24 +12798,20 @@ body, html {
   border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
-.btn-grad, .logout {
-  background-image: linear-gradient(to right, var(--main-color) 0%, #5cffa5 65%, var(--main-color) 100%);
+.btn-grad, .logout, .register {
+  background-image: linear-gradient(to right, var(--main-color) 0%, #5cffff 65%, var(--main-color) 100%);
 }
 
 .btn-grad {
   width: 20rem;
-  height: 2.5rem;
-  /*padding: 1rem 2rem;*/
+  height: 3rem;
   text-align: center;
   text-transform: uppercase;
   transition: 0.5s;
   background-size: 400% auto;
   color: white;
-  /*box-shadow: 0 0 20px #eee;*/
   border-radius: 2.5rem;
   display: block;
-  /*     background: var(--main-color);
-  */
 }
 
 .btn-grad:hover {
