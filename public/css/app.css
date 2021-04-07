@@ -12742,6 +12742,36 @@ body, html {
   text-decoration: none;
 }
 
+.UNKNOWN {
+  background-color: #696969;
+}
+
+.VERY_UNLIKELY {
+  background-color: #038142;
+}
+
+.UNLIKELY {
+  background-color: #03DD70;
+}
+
+.POSSIBLE {
+  background-color: #F9F900;
+}
+
+.LIKELY {
+  background-color: #F99700;
+}
+
+.VERY_LIKELY {
+  background-color: #F90000;
+}
+
+.circle {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
 .dropzone, .dropzone * {
   box-sizing: border-box;
 }

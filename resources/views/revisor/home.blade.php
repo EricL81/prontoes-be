@@ -50,11 +50,11 @@
                                     <img class="border rounded-3 my-2 img-fluid" src="{{$image->getUrl(250,250)}}" alt="...">
                                 </div>
                                 <div class="col-md-8">
-                                    <p>Adult: {{$image->adult}}</p>
-                                    <p>Spoof: {{$image->spoof}}</p>
-                                    <p>Medical: {{$image->medical}}</p>
-                                    <p>Violence: {{$image->violence}}</p>
-                                    <p>Racy: {{$image->racy}}</p>
+                                    <p class="d-flex align-items-center">Adult: <span class="{{$image->adult}} circle d-inline-block mx-2"></span></p>
+                                    <p class="d-flex align-items-center">Spoof: <span class="{{$image->spoof}} circle d-inline-block mx-2"></span></p>
+                                    <p class="d-flex align-items-center">Medical: <span class="{{$image->medical}} circle d-inline-block mx-2"></span></p>
+                                    <p class="d-flex align-items-center">Violence: <span class="{{$image->violence}} circle d-inline-block mx-2"></span></p>
+                                    <p class="d-flex align-items-center">Racy: <span class="{{$image->racy}} circle d-inline-block mx-2"></span></p>
 
                                     <p>Id: {{$image->id}}</p>
                                     <p>Archivo: {{$image->file}}</p>
