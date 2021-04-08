@@ -4,6 +4,7 @@ namespace App\Jobs;
 
 use Spatie\Image\Image;
 use Illuminate\Bus\Queueable;
+use Spatie\Image\Manipulations;
 use App\Models\AnnouncementImage;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
@@ -31,9 +32,9 @@ class GoogleVisionRemoveFaces implements ShouldQueue
      */
     public function handle()
     {
-        
         $i = AnnouncementImage::findOrFail($this->announcement_image_id);
-        $image = file_get_contents(storage_path('/app/'.$i->file));
+        $srcPath = storage_path('/app/'.$i->file);
+        $image = file_get_contents($srcPath);
         putenv('GOOGLE_APPLICATION_CREDENTIALS='.base_path('google_credentials.json'));
 
         
@@ -57,7 +58,7 @@ class GoogleVisionRemoveFaces implements ShouldQueue
         // cargar la imagen
         $image = Image::load($srcPath);
         // modificar la imagen con Spatie Image
-        $image->watermark(base_path('/images/smiley.png'))
+        $image->watermark(base_path('resources/images/smile.png'))
             ->watermarkPosition('top-left')
             ->watermarkPadding($bounds[0][0],$bounds[0][1])
             ->watermarkWidth($w,Manipulations::UNIT_PIXELS)
