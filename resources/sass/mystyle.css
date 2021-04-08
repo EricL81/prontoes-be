@@ -13,8 +13,21 @@ body, html {
     overflow-x: hidden;
 }
 
-.navborder {
-    border-bottom: 0.15rem solid var(--main-color);
+.link-simple {
+    color: #7F6BF6;
+    text-decoration: none;
+}
+
+.link-simple:hover {
+    color: #5cc9d6e3;
+    text-decoration: none;
+}
+
+.border-gradient {
+    border-bottom: 10px solid;
+    border-image-slice: 1;
+    border-width: 2px;
+    border-image-source: linear-gradient(to left, #5cc9d6e3, #743ad5, #5cc9d6e3);
 }
 
 .house, .profile, .revisor>a {
@@ -23,7 +36,7 @@ body, html {
 
 .idiomas {
     color: var(--main-color);
-    /*     display: grid;
+    /* display: grid;
     place-items: center; */
 }
 
@@ -89,33 +102,40 @@ body, html {
     color: white;
 }
 
+.form-login {
+    -webkit-box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.38);
+    border: 0px;
+    border-radius: 1rem;
+}
+
+.background-be {
+    background-image: url("/css/pat1-100.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 ::marker {
     color: var(--main-color);
 }
 
 .linav {
-    border: 2px solid;
-    border-color: #89ffbe;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     width: 15rem;
     height: 10rem;
-    box-shadow: 0 8px 32px 0 rgba(4, 11, 109, 0.37);
-    border-radius: 3rem;
-    opacity: 0.75;
+    color: #232323;
+    border: 2px linear-gradient(to left, #5cc9d6e3, #743ad5, #5cc9d6e3);
 }
 
 .linav a {
-    height: 100%;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 3rem;
-    transition: 0.3s;
+    color: #232323;
+    font-weight: 800;
+    font-size: 25px;
+    text-decoration: none;
 }
 
-.linav:hover {
-    opacity: 1;
+.linav a:hover {
+    color: var(--main-color);
 }
 
 .arrow {
@@ -136,15 +156,14 @@ body, html {
 }
 
 .mycard {
-    background: rgba(255, 255, 255, 0.25);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    backdrop-filter: blur(0.0px);
-    -webkit-backdrop-filter: blur(0.0px);
-    border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    -webkit-box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.38);
+    -moz-box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.38);
+    box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.38);
+    border: 0px;
+    border-radius: 1rem;
 }
 
-.btn-grad, .logout, .register {
+.btn-grad, .btn-med, .logout, .register {
     background-image: linear-gradient(to right, var(--main-color) 0%, #5cffff 65%, var(--main-color) 100%)
 }
 
@@ -161,6 +180,25 @@ body, html {
 }
 
 .btn-grad:hover {
+    background-position: right center;
+    /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+}
+
+.btn-med {
+    width: 10rem;
+    height: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 400% auto;
+    color: white;
+    border-radius: 2.5rem;
+    display: block;
+}
+
+.btn-med:hover {
     background-position: right center;
     /* change the direction of the change here */
     color: #fff;

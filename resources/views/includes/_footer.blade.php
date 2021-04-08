@@ -1,4 +1,4 @@
-<footer class="footer mt-auto footer-color pt-5 pb-4">
+<footer class="footer mt-auto footer-color background-be pt-5 pb-4">
     <div class="container-fluid">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-12 col-lg-4 d-flex align-items-center justify-content-center">
