@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-<div class="container my-5">
+<div class="container-fluid my-5">
 @if ($errors->any())
     <div class="alert alert-danger">
         <ul>
@@ -11,12 +11,12 @@
     </div>
 @endif
     <div class="row">
-        <div class="col-12 col-md-4 offset-md-4">
-            <h2>{{__('ui.signIn')}}</h2>
+        <div class="col-12 col-md-4 offset-md-4 mb-2">
+            <h2 class="fs-3 fw-bold text-center">{{__('ui.signIn')}}</h2>
         </div>
     </div>
-    <div class="row">
-        <div class="col-12 col-md-4 offset-md-4">
+    <div class="row m-2">
+        <div class="form-login col-12 col-lg-4 offset-lg-4 p-5 background-be">
             <form action="/login" method="POST">
                 @csrf
                 <div class="mb-3">
@@ -30,13 +30,13 @@
                     <input name="password" type="password" class="form-control" id="exampleInputPassword1">
                 </div>
 
-                <button type="submit" class="btn btn-primary">{{__('ui.login')}}</button>
+                <button type="submit" class="btn-grad border-0 mt-4" style="width:100%;">{{__('ui.login')}}</button>
             </form>
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-4 offset-md-4 text-center mt-3">
-            <h6>{{__('ui.noAccount')}} <a href="/register">{{__('ui.registerHere')}}</a></h6>
+            <h6>{{__('ui.noAccount')}} <br><a class="link-simple" href="/register">{{__('ui.registerHere')}}</a></h6>
         </div>
     </div>
 </div>
