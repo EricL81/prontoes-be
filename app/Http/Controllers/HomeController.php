@@ -7,12 +7,15 @@ use App\Jobs\ResizeImage;
 use App\Models\Announcement;
 use Illuminate\Http\Request;
 use App\Models\AnnouncementImage;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\View;
+use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
 use App\Http\Requests\AnnouncementRequest;
+
 
 class HomeController extends Controller
 {
@@ -50,14 +53,22 @@ class HomeController extends Controller
             $newFilePath = "public/announcements/{$a->id}/{$fileName}";
             Storage::move($image,$newFilePath);
 
-            dispatch(new ResizeImage($newFilePath,300,380));
+/*             dispatch(new ResizeImage($newFilePath,300,380));
             dispatch(new ResizeImage($newFilePath,300,300));
-            dispatch(new ResizeImage($newFilePath,500,400));
+            dispatch(new ResizeImage($newFilePath,500,400)); */
 
             $i->file = $newFilePath;
             $i->announcement_id = $a->id;
             $i->save();
-            dispatch(new GoogleVisionSafeSearchImage($i->id));
+/*             dispatch(new GoogleVisionSafeSearchImage($i->id));
+ */
+            Bus::chain([
+                new GoogleVisionSafeSearchImage($i->id),
+                new GoogleVisionRemoveFaces($i->id),
+                new ResizeImage($newFilePath,300,380),
+                new ResizeImage($newFilePath,500,400),
+                new ResizeImage($newFilePath,300,300),
+            ])->dispatch();
 
         }
 
