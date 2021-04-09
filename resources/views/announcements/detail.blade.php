@@ -5,7 +5,7 @@
         <div class="col-12 m-auto">
             <div class="card mb-3 mycard">
                 <div class="row">
-                    <div class="col-6 col-md-6 col-xl-6">
+                    <div class="col-12 col-md-6">
                         <div id="carouselExampleControls" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
                             <div class="carousel-inner w-100 h-100">
                                 @foreach ($announcement->images as $image)
@@ -26,7 +26,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="col-6 col-md-6 col-xl-6">
+                    <div class="col-12 col-md-6">
                         <div class="card-body d-flex flex-column h-100">
                             <div>
                                 <h5 class="card-title fw-bold fs-2">{{$announcement->name}}</h5>

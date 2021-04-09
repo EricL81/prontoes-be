@@ -16,7 +16,7 @@
                         <img class="img-fluid h-100 p-3" style="object-fit: cover;"
                             src="{{$announcement->images->first()->getUrl(300,380)}}" alt="...">
                     </div>
-                    <div class="col-6 col-md-8 col-xl-6">
+                    <div class="col-12 col-md-8 col-xl-6">
                         <div class="card-body d-flex flex-column h-100">
                             <div>
                                 <h5 class="card-title fw-bold fs-2">{{$announcement->name}}

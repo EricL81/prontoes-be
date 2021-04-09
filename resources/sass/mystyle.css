@@ -36,35 +36,34 @@ body, html {
 }
 
 .revisor {
-	background-color:transparent;
+    background-color: transparent;
     height: 2rem;
     width: 8rem;
     border: 0.10rem solid var(--main-color);
     border-radius: 2rem;
-	color:var(--main-color) !important;
-	text-decoration:none;
-	text-shadow:-50px -50px 0px #ffffff;
+    color: var(--main-color) !important;
+    text-decoration: none;
+    text-shadow: -50px -50px 0px #ffffff;
 }
 
-.revisor a{
-    color:var(--main-color) !important;
+.revisor a {
+    color: var(--main-color) !important;
 }
 
 .revisor:hover {
-	background-color:var(--main-color);
+    background-color: var(--main-color);
     height: 2rem;
     width: 8rem;
     border: 0.10rem solid var(--main-color);
     border-radius: 2rem;
-	color:#5cffff !important;
-	text-decoration:none;
-	text-shadow:-50px -50px 0px #ffffff;
+    color: #5cffff !important;
+    text-decoration: none;
+    text-shadow: -50px -50px 0px #ffffff;
 }
 
-.revisor a:hover{
-    color:#5cffff !important;
+.revisor a:hover {
+    color: #5cffff !important;
 }
-
 
 .my-badge {
     background-color: var(--main-color);
@@ -130,6 +129,7 @@ body, html {
     box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.38);
     border: 0px;
     border-radius: 1rem;
+    min-width: 330px;
 }
 
 .background-be {

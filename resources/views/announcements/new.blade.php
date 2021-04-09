@@ -2,7 +2,7 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <div class="col-12 col-md-4 offset-md-4">
+        <div class="col-12 col-lg-4 offset-lg-4 text-center">
             <h2>{{__("ui.uploadAd")}}</h2>
         </div>
     </div>
