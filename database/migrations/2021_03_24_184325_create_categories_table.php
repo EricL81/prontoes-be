@@ -22,16 +22,16 @@ class CreateCategoriesTable extends Migration
         });
 
         $categories = [    
-                ['name'=>'Ropa','foto'=>'ropa.jpg'],
-                ['name'=>'Informática','foto'=>'informatica.jpg'],
-                ['name'=>'Móviles','foto'=>'moviles.jpg'],
-                ['name'=>'Deportes','foto'=>'deportes.jpg'],
-                ['name'=>'Muebles','foto'=>'muebles.jpg'],
-                ['name'=>'Cine y música','foto'=>'cineymusica.jpg'],
-                ['name'=>'Libros','foto'=>'libros.jpg'],
-                ['name'=>'Coches y motos','foto'=>'cochesymotos.jpg'],
-                ['name'=>'Bicicletas','foto'=>'bicicletas.jpg'],
-                ['name'=>'Coleccionismo','foto'=>'coleccionismo.jpg']
+                ['name'=>'Ropa','foto'=>'ropa.png'],
+                ['name'=>'Informática','foto'=>'informatica.png'],
+                ['name'=>'Móviles','foto'=>'moviles.png'],
+                ['name'=>'Deportes','foto'=>'deportes.png'],
+                ['name'=>'Muebles','foto'=>'muebles.png'],
+                ['name'=>'Cine y música','foto'=>'cinemusica.png'],
+                ['name'=>'Libros','foto'=>'libros.png'],
+                ['name'=>'Coches y motos','foto'=>'cochesmotos.png'],
+                ['name'=>'Bicicletas','foto'=>'bicicletas.png'],
+                ['name'=>'Coleccionismo','foto'=>'coleccionismo.png']
         ];
 
         foreach ($categories as $category) {

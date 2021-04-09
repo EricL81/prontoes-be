@@ -63,12 +63,12 @@
                     </li>
                     @else
                     <li class="nav-item mx-2">
-                        <a class="text-decoration-none" href="#">{{__('ui.hello')}} {{Auth::user()->name}}</a>
+                        <a class="text-decoration-none" href="#" style="color:var(--main-color);">{{__('ui.hello')}} {{Auth::user()->name}}</a>
                     </li>
                     <li class="nav-item">
                         <form action="/logout" method="POST">
                             @csrf
-                            <button class="btn btn-danger" type="submit">{{__('ui.logout')}}</button>
+                            <button class="logout me-2" type="submit">{{__('ui.logout')}}</button>
                         </form>
                     </li>
                     @endif
