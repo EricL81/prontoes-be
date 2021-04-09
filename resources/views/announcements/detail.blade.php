@@ -39,8 +39,8 @@
                                     <span
                                     style="color:#7F6BF6;" class="fw-bold fs-4">{{$announcement->price}}
                                         €</span>
-                                    <span class="btn-med d-flex align-items-center justify-content-center"><a class="text-decoration-none text-white"
-                                            href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">{{__('ui.adDetail')}}</a></span>
+                                    <!-- <span class="btn-med d-flex align-items-center justify-content-center"><a class="text-decoration-none text-white"
+                                            href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">{{__('ui.adDetail')}}</a></span> -->
                                 </div>
                                     <small class="text-muted">{{__('ui.published')}}: <a style="color:#7F6BF6;" class="text-decoration-none" href="{{route('user.home',['id'=>$announcement->user->id])}}"><span>{{$announcement->user->name}}</span></a></small><br>
                                             
