@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="row vw-100 justify-content-center align-items-center">
-        @forelse($category->announcements as $announcement)
+        @forelse($announcements as $announcement)
         <div class="col-12 col-xl-6 d-flex justify-content-center">
             <div class="card my-3 mycard">
                 <div class="row">
@@ -46,6 +46,11 @@
             </div>
         </div>
         @endforelse
+        <div class="row my-3">
+            <div class="col-12 d-flex justify-content-center">
+                {{$announcements->links() }}
+            </div>
+        </div>
     </div>
 </div>
 @endsection
