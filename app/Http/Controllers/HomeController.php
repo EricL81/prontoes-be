@@ -14,6 +14,7 @@ use Illuminate\Support\Facades\View;
 use App\Jobs\GoogleVisionRemoveFaces;
 use Illuminate\Support\Facades\Storage;
 use App\Jobs\GoogleVisionSafeSearchImage;
+use App\Jobs\GoogleVisionLabelImage;
 use App\Http\Requests\AnnouncementRequest;
 
 
@@ -64,6 +65,7 @@ class HomeController extends Controller
  */
             Bus::chain([
                 new GoogleVisionSafeSearchImage($i->id),
+                new GoogleVisionLabelImage($i->id),
                 new GoogleVisionRemoveFaces($i->id),
                 new ResizeImage($newFilePath,300,380),
                 new ResizeImage($newFilePath,500,400),

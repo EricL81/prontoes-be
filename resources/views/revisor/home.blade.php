@@ -56,9 +56,19 @@
                                     <p class="d-flex align-items-center fw-bold">Violence: <span class="{{$image->violence}} circle d-inline-block mx-2"></span></p>
                                     <p class="d-flex align-items-center fw-bold">Racy: <span class="{{$image->racy}} circle d-inline-block mx-2"></span></p>
 
-                                    <p><span class="fw-bold">Id: </span>{{$image->id}}</p>
+                                    <p class="fw-bold">Labels: 
+                                        <ul>
+                                            @if($image->labels)
+                                                @foreach ($image->labels as $label)
+                                                    <li>{{ $label }}</li>
+                                                @endforeach
+                                            @endif
+                                        </ul>
+                                    
+
+                                    <!-- <p><span class="fw-bold">Id: </span>{{$image->id}}</p>
                                     <p><span class="fw-bold">Archivo: </span>{{$image->file}}</p>
-                                    <p><span class="fw-bold">URL: </span>{{Storage::url($image->file)}}</p>
+                                    <p><span class="fw-bold">URL: </span>{{Storage::url($image->file)}}</p> -->
                                 </div>
                             </div>
                             @endforeach
