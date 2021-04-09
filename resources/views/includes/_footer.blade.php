@@ -1,5 +1,4 @@
-<footer class="footer mt-auto footer-color background-be pt-5 pb-4">
-    <div class="container-fluid">
+<footer class="footer container-fluid footer-color background-be pt-5 pb-4">
         <div class="row d-flex justify-content-center">
             <div class="col-12 col-md-12 col-lg-4 d-flex align-items-center justify-content-center">
                 <a href="{{route('home')}}"><img src="/css/LOGO.png" width="250"
@@ -21,5 +20,4 @@
                 </ul>
             </div>
         </div>
-    </div>
 </footer>

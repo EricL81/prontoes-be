@@ -7,14 +7,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-4 offset-md-4">
+        <div class="form-login col-12 col-lg-4 offset-lg-4 p-3 background-be">
             <form action="{{route('createAnnouncement')}}" method="POST">
                 @csrf
                 <div class="card-header">
-                    Nuevo anuncio (Secret: {{$uniqueSecret}})
+                {{__("ui.newAdSecret")}} (Secret: {{$uniqueSecret}})
                 </div>
                 <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
-                <div class="mb-3">
+                <div class="my-3">
                     <label for="category" class="form-label">{{__("ui.categorie")}}</label>
                     <select name="category" id="category" class="form-select" aria-label="Default select example">
                         <option value="" selected>{{__("ui.selectCategorie")}}</option>
@@ -67,8 +67,8 @@
                     <small class="alert alert-danger">{{ $message }}</small>
                     @enderror
                 </div>
-                <div class="mt-2">
-                    <button type="submit" class="btn btn-primary">{{__("ui.submit")}}</button>
+                <div class="mt-2 d-flex justify-content-center">
+                    <button type="submit" class="btn-grad border-0">{{__("ui.submit")}}</button>
                 </div>
             </form>
         </div>

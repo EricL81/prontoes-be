@@ -11,12 +11,12 @@
     </div>
 @endif
     <div class="row">
-        <div class="col-12 col-md-4 offset-md-4">
-            <h2>{{__('ui.signUp')}}</h2>
+        <div class="col-12 col-md-4 offset-md-4 mb-2">
+            <h2 class="fs-3 fw-bold text-center">{{__('ui.signUp')}}</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-12 col-md-4 offset-md-4">
+        <div class="col-12 col-lg-4 offset-lg-4 form-login p-5 background-be">
             <form action="/register" method="POST">
                 @csrf
                 <div class="mb-3">
@@ -40,7 +40,7 @@
                     <input name="password_confirmation" type="password" class="form-control" id="exampleInputPassword1">
                 </div>
 
-                <button type="submit" class="btn btn-primary">{{__('ui.submit')}}</button>
+                <button type="submit" class="btn-grad border-0 mt-4" style="width:100%;">{{__('ui.submit')}}</button>
             </form>
 
         </div>

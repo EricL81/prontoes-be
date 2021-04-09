@@ -21,9 +21,7 @@ class PublicController extends Controller
     public function detailCategory($id)
     {
         $category = Category::findOrFail($id);
-        $announcements = $category->announcements()
-                                    ->where('is_accepted',true)
-                                    ->orderBy('id', 'desc')->paginate(4);
+        $announcements = $category->announcements()->where('is_accepted',true)->orderBy('id','desc')->paginate(4);
         
         return view('announcements.detailcategory', compact('category','announcements'));
 

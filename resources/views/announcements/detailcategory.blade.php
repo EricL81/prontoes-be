@@ -1,70 +1,38 @@
 @extends('layouts.app')
 @section('content')
-<div class="container h-100 mt-4">
+<div class="container-fluid h-auto mt-4" style="min-height: 450px;">
     <div class="row mb-4">
         <div class='col-12 text-center'>
-            <h1>{{__('ui.allAdsFrom')}} {{__("ui.{$category->name}")}}</h1>
+            <h1>{{__('ui.allAdsFrom')}} <span style="color: #5cc9d6e3">{{__("ui.{$category->name}")}}</span></h1>
         </div>
     </div>
-    <div class="row justify-content-center align-items-center">
+    <div class="row vw-100 justify-content-center align-items-center">
         @forelse($category->announcements as $announcement)
-        <div class="col-12 col-md-6">
-            <div class="card mb-3 mycard" style="max-width: 650px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid"
-                                        alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid"
-                                        alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid"
-                                        alt="...">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+        <div class="col-12 col-xl-6 d-flex justify-content-center">
+            <div class="card my-3 mycard">
+                <div class="row">
+                    <div class="col-6 col-md-4 col-xl-6">
+                        <img class="img-fluid h-100 p-3" style="object-fit: cover;" src="{{$announcement->images->first()->getUrl(300,380)}}"
+                            alt="...">
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-6 col-md-8 col-xl-6">
                         <div class="card-body d-flex flex-column h-100">
                             <div>
-                                <h5 class="card-title">{{$announcement->name}}</h5>
-                                <p class="card-text">{{$announcement->description}}</p>
-                                <div class="d-flex justify-content-between mt-5">
-                                    <span class="text-danger border border-danger rounded-pill p-2">{{$announcement->price}}
+                                <h5 class="card-title fw-bold fs-2">{{$announcement->name}}</h5>
+                                <p class="card-text fs-6 mt-3" style="min-height:100px;">{{$announcement->description}}</p>
+                            </div>
+
+                            <div class="mt-3 mt-auto">
+                                <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between my-3">
+                                    <span
+                                    style="color:#7F6BF6;" class="fw-bold fs-4">{{$announcement->price}}
                                         €</span>
-                                    <span class="btn-grad"><a class="text-decoration-none text-white"
+                                    <span class="btn-med d-flex align-items-center justify-content-center"><a class="text-decoration-none text-white"
                                             href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">{{__('ui.adDetail')}}</a></span>
                                 </div>
-                            
-                            </div>
-                            
-                            <div class="mt-auto">
-                                <p class="mt-2">
-                                    <small class="text-muted">{{__('ui.published')}}: <a class="text-decoration-none"
-                                            href="{{route('user.home',['id'=>$announcement->user->id])}}"><span
-                                                class="text-success">{{$announcement->user->name}}</span></a></small>
-                                </p>
-
-                                <p class="mt-2">
-                                    <small class="text-muted">{{__('ui.dateAd')}}: <a class="text-decoration-none"
-                                            href="#"><span
-                                                class="text-success">{{$announcement->created_at->format('d/m/Y')}}</span></a></small>
-                                </p>
+                                    <small class="text-muted">{{__('ui.published')}}: <a style="color:#7F6BF6;" class="text-decoration-none" href="{{route('user.home',['id'=>$announcement->user->id])}}"><span>{{$announcement->user->name}}</span></a></small><br>
+                                            
+                                    <small class="text-muted">{{__('ui.dateAd')}}: <a style="color:#7F6BF6;" class="text-decoration-none" href="#"><span>{{$announcement->created_at->format('d/m/Y')}}</span></a></small>
                             </div>
                         </div>
                     </div>
@@ -73,8 +41,8 @@
         </div>
         @empty
         <div class="row">
-            <div class="col-12 col-md-4 offset md-4">
-                <p>{{__('ui.noAdsinCategory')}}</p>
+            <div class="col-12 col-md-6 offset-md-3 text-center" style="color: var(--main-color);">
+                <p>{{__('ui.noAdsInCategory')}}</p>
             </div>
         </div>
         @endforelse

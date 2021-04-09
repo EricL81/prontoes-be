@@ -1,9 +1,9 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light border-gradient mb-3" id="tophome">
+<nav class="navbar navbar-expand-lg navbar-light bg-light background-be border-gradient mb-3" id="tophome">
     <div class="container-fluid">
         <div class="d-flex">
             <a class="navbar-brand" href="{{route('home')}}"><img class="ms-3" src="/css/IMA.png" width="90" alt=""></a>
-            <a class="nav-link d-flex align-items-center" aria-current="page" href="{{route('home')}}"><i
-                    class="bi bi-house-door fs-4 fw-bold house"></i></a>
+            <a class="nav-link d-flex align-items-center" aria-current="page" href="{{route('home')}}"><img
+                            src='/img/home.png'></a>
         </div>
         
 
@@ -40,10 +40,10 @@
     
                     @auth
                     @if(Auth::user()->is_revisor)
-                    <li class="nav-item mx-2 dropdown">
-                        <a class="text-decoration-none nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false"><i
-                                class="bi bi-person-circle fs-4 profile"></i></a>
+                    <li class="nav-item mx-4 dropdown">
+                        <a class="text-decoration-none dropdown-toggle link-simple" href="#" id="navbarDropdown" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false"><img
+                        src='/img/user.png'></a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="nav-item my-1 ms-1">
                                 {{__('ui.hello')}} {{Auth::user()->name}}
@@ -75,8 +75,8 @@
                     @endauth
                 </ul>
                 <ul class="d-flex align-items-center navbar-nav mb-lg-0 ">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle idiomas" href="#" id="navbarDropdown" role="button"
+                    <li class="nav-item dropdown idiomas align-items-center">
+                        <a class="text-decoration-none text-muted dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-bs-toggle="dropdown" aria-expanded="false">
                             {{__('ui.languages')}}
                         </a>

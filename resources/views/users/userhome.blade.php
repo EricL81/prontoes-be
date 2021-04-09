@@ -1,29 +1,25 @@
 @extends('layouts.app')
 @section('content')
 
-<div class="container mt-0 mx-0 h-100">
-<div class="row mb-2 mt-2">
-        <div class='col-12 text-center mt-3'>
-            <h1>{{__('ui.allAdsFrom')}} {{$user->name}}</h1>
+<div class="container-fluid h-auto mt-4">
+    <div class="row mb-4">
+        <div class='col-12 text-center'>
+            <h1>{{__('ui.allAdsFrom')}} <span style="color: #5cc9d6e3">{{$user->name}}</span></h1>
         </div>
     </div>
     <div class="row mt-5 vw-100 justify-content-center align-items-top" id="5ultimos">
         @foreach($announcements as $announcement)
-        <div class="col-12 col-md-6">
-            <div class="card my-3 mycard" style="max-width:650px;">
-                <div class="row g-0">
-                    <div class="col-md-4">
-                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid border rounded-3" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid border rounded-3" alt="...">
-                                </div>
-                                <div class="carousel-item">
-                                    <img src="https://via.placeholder.com/300x330" class="d-block w-100 image-fluid border rounded-3" alt="...">
-                                </div>
+        <div class="col-12 col-xl-6 d-flex justify-content-center">
+            <div class="card my-3 mycard w-100" style="max-width:800px;">
+                <div class="row">
+                    <div class="col-6 col-md-4 col-xl-6">
+                            <div id="carouselExampleControls" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
+                            <div class="carousel-inner w-100 h-100">
+                                @foreach ($announcement->images as $image)
+                                    <div class="carousel-item w-100 h-100 @if($loop->first)active @endif">
+                                        <img class="img-fluid w-100 h-100 p-3" style="object-fit: cover;" src="{{$image->getUrl(300,300)}}" alt="...">
+                                    </div>
+                                @endforeach             
                             </div>
                             <button class="carousel-control-prev" type="button"
                                 data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -37,7 +33,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="col-md-8">
+                    <div class="col-6 col-md-8 col-xl-6">
                         <div class="card-body d-flex flex-column h-100">
                             <div>
                                 <h5 class="card-title">{{$announcement->name}}
@@ -47,26 +43,22 @@
                                     <span class="badge bg-danger">{{__('ui.rejected')}}</span>
                                     @endif                               
                                 </h5>
-                                <h6 class="fst-italic"><a
-                                        href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{__("ui.{$announcement->category->name}")}}</a>
+                                <h6 class="fst-italic"><a class="text-decoration-none" style="color:#5cc9d6e3;" href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{__("ui.{$announcement->category->name}")}}</a>
                                 </h6>
-                                <p class="card-text">{{$announcement->description}}</p>
-                                <div class="d-flex justify-content-between mt-5">
-                                    <span class="text-danger border border-danger rounded-pill p-2">{{$announcement->price}}
+                                <p class="card-text fs-6 mt-3" style="min-height:100px;">{{$announcement->description}}</p>
+                            </div>
+                            <div class="mt-3 mt-auto">
+                                <div class="d-flex flex-column flex-sm-row align-items-center justify-content-between my-3">
+                                    <span
+                                    style="color:#7F6BF6;" class="fw-bold fs-4">{{$announcement->price}}
                                         €</span>
-                                    <span class="btn-grad"><a class="text-decoration-none text-white"
+                                    <span class="btn-med d-flex align-items-center justify-content-center"><a class="text-decoration-none text-white"
                                             href="{{route('detailAnnouncement',['id'=>$announcement->id])}}">{{__('ui.adDetail')}}</a></span>
                                 </div>
-                            
+                                            
+                                    <small class="text-muted">{{__('ui.dateAd')}}: <a style="color:#7F6BF6;" class="text-decoration-none" href="#"><span>{{$announcement->created_at->format('d/m/Y')}}</span></a></small>
                             </div>
                             
-                            <div class="mt-auto">
-                                <p class="mt-2">
-                                    <small class="text-muted">{{__('ui.dateAd')}}: <a class="text-decoration-none"
-                                            href="#"><span
-                                                class="text-success">{{$announcement->created_at->format('d/m/Y')}}</span></a></small>
-                                </p>
-                            </div>
                         </div>
                     </div>
                 </div>

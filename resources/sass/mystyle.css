@@ -5,6 +5,7 @@
 }
 
 body, html {
+    height: 100%;
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
@@ -30,14 +31,8 @@ body, html {
     border-image-source: linear-gradient(to left, #5cc9d6e3, #743ad5, #5cc9d6e3);
 }
 
-.house, .profile, .revisor>a {
+.revisor>a, .idiomas {
     color: var(--main-color);
-}
-
-.idiomas {
-    color: var(--main-color);
-    /* display: grid;
-    place-items: center; */
 }
 
 .revisor {
@@ -49,7 +44,7 @@ body, html {
 }
 
 .revisor a:hover {
-    color: white;
+    color: #5cffff;
 }
 
 .revisor:hover {
@@ -102,6 +97,18 @@ body, html {
     color: white;
 }
 
+.login:active, .register:active, .idiomas:active {
+    color: var(--main-colordark);
+}
+
+.idiomas a:hover {
+    color: var(--main-color) !important;
+}
+
+.welcome {
+    font-size: 4rem;
+}
+
 .form-login {
     -webkit-box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.38);
     -moz-box-shadow: 0px 0px 23px -10px rgba(0, 0, 0, 0.38);
@@ -135,7 +142,12 @@ body, html {
 }
 
 .linav a:hover {
-    color: var(--main-color);
+    color: #5cc9d6e3;
+}
+
+.linav a img:hover {
+    width: 70px;
+    height: 70px;
 }
 
 .arrow {
