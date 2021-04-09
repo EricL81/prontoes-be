@@ -12,35 +12,18 @@
         <div class="col-12 col-xl-6 d-flex justify-content-center">
             <div class="card my-3 mycard w-100" style="max-width:800px;">
                 <div class="row">
-                    <div class="col-6 col-md-4 col-xl-6">
-                            <div id="carouselExampleControls" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
-                            <div class="carousel-inner w-100 h-100">
-                                @foreach ($announcement->images as $image)
-                                    <div class="carousel-item w-100 h-100 @if($loop->first)active @endif">
-                                        <img class="img-fluid w-100 h-100 p-3" style="object-fit: cover;" src="{{$image->getUrl(300,300)}}" alt="...">
-                                    </div>
-                                @endforeach             
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
+                    <div class="col-12 col-md-4 col-xl-6 d-flex justify-content-center">
+                        <img class="img-fluid h-100 p-3" style="object-fit: cover;"
+                            src="{{$announcement->images->first()->getUrl(300,380)}}" alt="...">
                     </div>
                     <div class="col-6 col-md-8 col-xl-6">
                         <div class="card-body d-flex flex-column h-100">
                             <div>
-                                <h5 class="card-title">{{$announcement->name}}
+                                <h5 class="card-title fw-bold fs-2">{{$announcement->name}}
                                     @if($announcement->is_accepted)
-                                    <span class="badge bg-success">{{__('ui.accepted')}}</span>
+                                    <span><i class="bi bi-hand-thumbs-up fs-3" style="color:green;"></i></span>
                                     @else
-                                    <span class="badge bg-danger">{{__('ui.rejected')}}</span>
+                                    <span><i class="bi bi-hand-thumbs-down fs-3" style="color:red;"></i></span>
                                     @endif                               
                                 </h5>
                                 <h6 class="fst-italic"><a class="text-decoration-none" style="color:#5cc9d6e3;" href="{{route('detailCategory',['id'=>$announcement->category->id])}}">{{__("ui.{$announcement->category->name}")}}</a>
