@@ -4,7 +4,7 @@
 <div class="container-fluid mt-0 mx-2 py-3 mt-3 h-auto">
     <div class="row justify-content-center align-items-center my-3">
         <div class="col-12 text-center">
-            <p class="mb-2 welcome" style="color: var(--main-color);">{{__('ui.welcome')}}</p>
+            <p class="mb-2 welcome">{{__('ui.welcome')}}</p>
         </div>
     </div>
     <div class="row row-cols-xl-5 justify-content-center my-5">
