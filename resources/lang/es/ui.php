@@ -53,5 +53,7 @@ return [
     'reject'=>'Rechazar',
     'noAdsInRevisor'=>'No hay anuncios para revisar',
     'languages'=>'Idiomas',
+    'search'=>'Buscar',
+
 
 ];

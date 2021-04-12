@@ -53,4 +53,5 @@ return [
     'reject'=>'Reject',
     'noAdsInRevisor'=>'There are no announcements to review.',
     'languages'=>'Languages',
+    'search'=>'Search',
 ];

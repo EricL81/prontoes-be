@@ -34,4 +34,15 @@ class PublicController extends Controller
         return redirect()->back();
     }
 
+
+    public function search(Request $request)
+    {
+        $q = $request->input('q');
+        $announcements = Announcement::search($q)
+            ->where('is_accepted', true)
+            ->get();
+
+        return view('search_results', compact('q', 'announcements'));
+    }  
+
 }

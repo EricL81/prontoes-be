@@ -40,10 +40,10 @@ return [
     'noAdsInCategory'=>'Non ci sono annunci in questa categoria',
     'neverShareName'=>"Non condivideremo mai il tuo nome con nessun altro.",
     'neverShareEmail'=>"Non condivideremo mai il tuo indirizzo email con nessun altro.",
-    'uploadAd'=>'Pubblicità',
+    'uploadAd'=>'Carica tu annuncio',
     'categorie'=>'Categoria',
     'selectCategorie'=>'Seleziona unan categoria',
-    'nameAd'=>"Nome della pubblicità",
+    'nameAd'=>"Nome del annuncio",
     'description'=>'Descrizione',
     'price'=>'Prezzo',
     'ad'=>'Pubblicità',
@@ -53,5 +53,7 @@ return [
     'reject'=>'Rifiuta',
     'noAdsInRevisor'=>'Non ci sono annunci da rivedere.',
     'languages'=>'Lingue',
+    'search'=>'Cerca',
+
 
 ];

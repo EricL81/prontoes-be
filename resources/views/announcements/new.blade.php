@@ -10,11 +10,8 @@
         <div class="form-login col-12 col-lg-4 offset-lg-4 p-3 background-be">
             <form action="{{route('createAnnouncement')}}" method="POST">
                 @csrf
-                <div class="card-header">
-                {{__("ui.newAdSecret")}} (Secret: {{$uniqueSecret}})
-                </div>
                 <input type="hidden" name="uniqueSecret" value="{{$uniqueSecret}}">
-                <div class="my-3">
+                <div class="my-2">
                     <label for="category" class="form-label">{{__("ui.categorie")}}</label>
                     <select name="category" id="category" class="form-select" aria-label="Default select example">
                         <option value="" selected>{{__("ui.selectCategorie")}}</option>

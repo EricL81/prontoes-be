@@ -36,6 +36,8 @@ Route::post('/announcement/images/upload',[HomeController::class,'uploadImages']
 Route::delete('/announcement/images/remove', [HomeController::class,'removeImages'])->name('announcement.images.remove');
 Route::get('/announcement/images', [HomeController::class,'getImages'])->name('announcement.images');
 
+Route::get('/search', [PublicController::class,'search'])->name('search');
+
 
 
 
