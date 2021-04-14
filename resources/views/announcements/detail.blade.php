@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+<title>{{$announcement->name}} - Pronto.es</title>
+@endsection
 @section('content')
 <div class="container mt-4">
     <div class="row align-items-center">

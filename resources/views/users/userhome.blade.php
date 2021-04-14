@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+<title>{{$user->name}} - Pronto.es</title>
+@endsection
 @section('content')
 
 <div class="container-fluid h-auto mt-4">

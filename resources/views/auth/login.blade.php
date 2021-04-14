@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+<title>{{__('ui.login')}} - Pronto.es</title>
+@endsection
 @section('content')
 <div class="container-fluid my-5">
 @if ($errors->any())

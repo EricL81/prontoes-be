@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+<title>{{$q}} - Pronto.es</title>
+@endsection
 @section('content')
 <div class="container-fluid mt-0 mx-2 py-3 mt-3 h-auto">
     <div class="row mt-2 justify-content-center align-items-center h-100" id="5ultimos">

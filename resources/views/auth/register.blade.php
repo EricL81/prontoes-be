@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+<title>{{__('ui.register')}} - Pronto.es</title>
+@endsection
 @section('content')
 <div class="container my-5">
 @if ($errors->any())

@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+<title>{{__("ui.{$category->name}")}} - Pronto.es</title>
+@endsection
 @section('content')
 <div class="container-fluid h-auto mt-4" style="min-height: 450px;">
     <div class="row mb-4">

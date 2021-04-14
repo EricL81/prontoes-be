@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('title')
+<title>{{__('ui.revisor')}} - Pronto.es</title>
+@endsection
 @section('content')
 <div class='container' style="min-height: 450px;">
     @if($announcement)
