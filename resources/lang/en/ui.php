@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome'=>'Welcome to Pronto.es',
+    'welcome'=>'Welcome to Pronto-BE',
     'start'=>'Start',
     'categories'=>'Categories',
     'newAd'=>'Upload New Ad',

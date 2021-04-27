@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'welcome'=>'Benvenuto su Pronto.es',
+    'welcome'=>'Benvenuto su Pronto-BE',
     'start'=>'Casa',
     'categories'=>'Categorie',
     'newAd'=>'Carica un nuovo annuncio',

@@ -30,15 +30,15 @@
         </div>
     </div>
 </div>
-<div class="container-fluid mx-2 h-auto">
+<div class="container-fluid mx-0 h-auto container__announcements">
 
-    <div class="row mt-5 justify-content-center align-items-center h-100" id="5ultimos">
+    <div class="row mt-5 px-2 justify-content-center align-items-center h-100" id="5ultimos">
         @foreach($announcements as $announcement)
-        <div class="col-12 col-xl-6 h-100">
-            <div class="card my-3 mycard">
+        <div class="col-12 col-xl-6 h-100 d-flex justify-content-center">
+            <div class="card my-3 mx-1 mycard">
                 <div class="row">
-                    <div class="col-12 col-md-4 col-xl-6 d-flex justify-content-center">
-                        <img class="img-fluid h-100 p-3" style="object-fit: cover;"
+                    <div class="col-12 col-md-4 col-xl-6 d-flex justify-content-center justify-content-md-start">
+                        <img class="img-fluid h-100" style="object-fit: cover;"
                             src="{{$announcement->images->first()->getUrl(300,380)}}" alt="...">
                     </div>
                     <div class="col-12 col-md-8 col-xl-6">

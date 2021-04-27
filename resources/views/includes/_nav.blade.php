@@ -1,9 +1,10 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light background-be border-gradient mb-3" id="tophome">
+<nav class="navbar navbar-expand-lg navbar-light background-be border-gradient mb-3" id="tophome">
     <div class="container-fluid">
-        <div class="d-flex">
+        <div class="d-flex align-items-center">
             <a class="navbar-brand" href="{{route('home')}}"><img class="ms-3" src="/css/IMA.png" width="90" alt=""></a>
-            <a class="nav-link d-flex align-items-center" aria-current="page" href="{{route('home')}}"><img
-                    src='/img/home.png'></a>
+            <a class="icon__home" aria-current="page" href="{{route('home')}}">
+                <ion-icon name="home"></ion-icon>
+            </a>
         </div>
 
 
@@ -27,9 +28,12 @@
                 </li>
                 @endauth
             </ul>
-            <form class="mx-auto my-2 d-flex align-items-center flex-nowrap" action="{{route('search')}}" method="GET" class="d-flex">
-                <input class="form-control me-2 rounded-pill" name="q" type="search" placeholder="{{__('ui.search')}}..." aria-label="Search">
-                <button class="btn-med" style="border:none;" type="submit">{{__('ui.search')}}</button>
+            <form class="mx-auto my-2 search flex-nowrap" action="{{route('search')}}" method="GET" class="d-flex">
+                <input class="form-control me-2 rounded-pill search__input" name="q" type="search"
+                    placeholder="{{__('ui.search')}}..." aria-label="Search">
+                <button class="search__icon" type="submit">
+                    <ion-icon name="search"></ion-icon>
+                </button>
             </form>
             <div class="d-flex justify-content-center">
                 <ul class="d-flex list-unstyled justify-content-center align-items-center mb-0">
@@ -46,9 +50,11 @@
 
                     @auth
                     @if(Auth::user()->is_revisor)
-                    <li class="nav-item mx-4 dropdown">
-                        <a class="text-decoration-none dropdown-toggle link-simple" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false"><img src='/img/user.png'></a>
+                    <li class="mx-4 dropdown">
+                        <a class="icon__account text-decoration-none" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <ion-icon name="person"></ion-icon>
+                        </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li class="nav-item my-1 ms-1">
                                 {{__('ui.hello')}} {{Auth::user()->name}}
@@ -80,25 +86,37 @@
                     @endif
                     @endauth
                 </ul>
-                <ul class="d-flex align-items-center navbar-nav mb-lg-0 ">
-                    <li class="nav-item dropdown idiomas align-items-center">
-                        <a class="text-decoration-none text-muted dropdown-toggle" href="#" id="navbarDropdown"
-                            role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            {{__('ui.languages')}}
+                <ul class="d-flex list-unstyled justify-content-center align-items-center mb-lg-0">
+                    <li class="dropdown">
+                        <a class="icon__world text-decoration-none" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="modal" data-bs-target="#lang">
+                            <ion-icon name="globe-outline"></ion-icon>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @include('includes._locale',["lang"=>'es',"nation"=>'es'])
-                            @include('includes._locale',["lang"=>'en',"nation"=>'gb'])
-                            @include('includes._locale',["lang"=>'it',"nation"=>'it'])
-                            @include('includes._locale',["lang"=>'fr',"nation"=>'fr'])
-                        </ul>
-                        <!-- <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            @foreach($categories as $category)
-                            <li><a class="dropdown-item"
-                                    href="{{route('detailCategory',['id'=>$category->id])}}">{{__("ui.{$category->name}")}}</a>
-                            </li>
-                            @endforeach
-                        </ul> -->
+                        {{-- Modal Languages --}}
+                        <div class="modal fade" id="lang" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div>Languages
+                                            {{--                                             @include('includes._locale',["lang"=>'es',"nation"=>'es'])
+                                            @include('includes._locale',["lang"=>'en',"nation"=>'gb'])
+                                            @include('includes._locale',["lang"=>'it',"nation"=>'it'])
+                                            @include('includes._locale',["lang"=>'fr',"nation"=>'fr']) --}}
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
