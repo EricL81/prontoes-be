@@ -23,16 +23,16 @@ class CreateCategoriesTable extends Migration
         });
 
         $categories = [    
-                ['name'=>'Ropa','logo'=>'ropa.png','foto'=>'ropa.png'],
-                ['name'=>'Informática','logo'=>'informatica.png','foto'=>'informatica.png'],
-                ['name'=>'Móviles','logo'=>'moviles.png','foto'=>'moviles.png'],
-                ['name'=>'Deportes','logo'=>'deportes.png','foto'=>'deportes.png'],
-                ['name'=>'Muebles','logo'=>'muebles.png','foto'=>'muebles.png'],
-                ['name'=>'Cine y música','logo'=>'cinemusica.png','foto'=>'cinemusica.png'],
-                ['name'=>'Libros','logo'=>'libros.png','foto'=>'libros.png'],
-                ['name'=>'Coches y motos','logo'=>'cochesmotos.png','foto'=>'cochesmotos.png'],
-                ['name'=>'Bicicletas','logo'=>'bicicletas.png','foto'=>'bicicletas.png'],
-                ['name'=>'Coleccionismo','logo'=>'coleccionismo.png','foto'=>'coleccionismo.png']
+                ['name'=>'Ropa','logo'=>'ropa.png','foto'=>'ropa.jpg'],
+                ['name'=>'Informática','logo'=>'informatica.png','foto'=>'informatica.jpg'],
+                ['name'=>'Móviles','logo'=>'moviles.png','foto'=>'moviles.jpg'],
+                ['name'=>'Deportes','logo'=>'deportes.png','foto'=>'deportes.jpg'],
+                ['name'=>'Muebles','logo'=>'muebles.png','foto'=>'muebles.jpg'],
+                ['name'=>'Cine y música','logo'=>'cinemusica.png','foto'=>'cinemusica.jpg'],
+                ['name'=>'Libros','logo'=>'libros.png','foto'=>'libros.jpg'],
+                ['name'=>'Coches y motos','logo'=>'cochesmotos.png','foto'=>'cochesmotos.jpg'],
+                ['name'=>'Bicicletas','logo'=>'bicicletas.png','foto'=>'bicicletas.jpg'],
+                ['name'=>'Coleccionismo','logo'=>'coleccionismo.png','foto'=>'coleccionismo.jpg']
         ];
 
         foreach ($categories as $category) {
