@@ -13,8 +13,8 @@
     <div class="row row-cols-xl-5 justify-content-center my-5">
         @foreach($categories as $category)
         <div class="col">
-            <ul class="d-flex justify-content-center flex-wrap list-unstyled m-0">
-                <li class="my-2 mx-1 flex-shrink-0 d-flex linav" style="background-image: url('/img/{{$category->foto}}');"><a class="text-decoration-none text-white fs-3 fw-bold align-items-center d-flex justify-content-center" href="{{route('detailCategory',['id'=>$category->id])}}"><span>{{$category->name}}</span></a></li>
+            <ul class="d-flex justify-content-center flex-wrap list-unstyled my-4">
+                <li class=" mx-1 flex-shrink-0 d-flex linav" style="background-image: url('/img/{{$category->foto}}');"><a class="text-decoration-none text-white fs-3 fw-bold align-items-center d-flex justify-content-center" href="{{route('detailCategory',['id'=>$category->id])}}"><span>{{$category->name}}</span></a></li>
 
             </ul>
         </div>
@@ -34,11 +34,11 @@
         <div class="col-12 col-xl-6 h-100 d-flex justify-content-center">
             <div class="card my-3 mx-1 mycard">
                 <div class="row">
-                    <div class="col-12 col-md-4 col-xl-6 d-flex justify-content-center justify-content-md-start">
+                    <div class="col-12 col-md-4 col-xl-6 d-flex justify-content-center pe-0 justify-content-md-start">
                         <img class="img-fluid h-100" style="object-fit: cover;"
                             src="{{$announcement->images->first()->getUrl(300,380)}}" alt="...">
                     </div>
-                    <div class="col-12 col-md-8 col-xl-6">
+                    <div class="col-12 col-md-8 col-xl-6 ps-lg-0">
                         <div class="card-body d-flex flex-column h-100">
                             <div>
                                 <h5 class="card-title fw-bold fs-2">{{$announcement->name}}</h5>
@@ -52,7 +52,7 @@
                             <div class="mt-3 mt-auto">
                                 <div
                                     class="d-flex flex-column flex-sm-row align-items-center justify-content-between my-3">
-                                    <span style="color: var(--main-color); text-shadow: 1px 1px 0px var(--main-colordark);" class="fw-bold fs-4">{{$announcement->price}}
+                                    <span style="color: var(--main-color); text-shadow: 1px 1px 0px var(--main-light);" class="fw-bold fs-4">{{$announcement->price}}
                                         €</span>
                                     <span class="btn-med d-flex align-items-center justify-content-center"><a
                                             class="text-decoration-none text-white"

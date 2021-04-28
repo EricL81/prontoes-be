@@ -12656,14 +12656,14 @@ textarea.form-control-lg {
   --main-color: #7F6BF6;
   --main-colordark: #5443b5;
   --main-black: #232323;
-  --main-light: #5ccad6;
+  --main-light: #89ffbe;
   --primary-light: #8abdff;
   --primary: #6d5dfc;
   --primary-dark: #5b0eeb;
   --white: #ffffff;
   --greyLight-1: #e9eef5;
   --greyLight-2: #c8d0e7;
-  --greyLight-3: #bec8e4;
+  --greyLight-3: #b2bbd4;
   --greyDark: #9baacf;
 }
 
@@ -12675,8 +12675,7 @@ body, html {
   /*     background-color: #99D2A5e3;
   background-image: linear-gradient(0deg, #a9ffeae3 30%, #5cc9d6e3 70%); */
   overflow-x: hidden;
-  /*     background: var(--greyLight-1);
-  */
+  background: var(--greyLight-1);
 }
 
 .link-simple {
@@ -12693,7 +12692,7 @@ body, html {
   border-bottom: 10px solid;
   border-image-slice: 1;
   border-width: 2px;
-  border-image-source: linear-gradient(to left, #5cc9d6e3, #743ad5, #5cc9d6e3);
+  border-image-source: linear-gradient(to left, var(--main-light), #743ad5, var(--main-light));
 }
 
 .idiomas {
@@ -12912,23 +12911,22 @@ body, html {
 .linav a {
   height: 100%;
   width: 100%;
-  background: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5);
   border-radius: 3rem;
-  transition: 0.3s;
 }
 
-.linav:hover a {
-  height: 100%;
-  width: 100%;
+.linav:hover {
   border-radius: 3rem;
-  background: none;
+  background-color: var(--main-color);
+  background-blend-mode: multiply;
+  cursor: pointer;
 }
 
-/* .linav a img:hover {
-    width: 70px;
-    height: 70px;
+.linav a:hover span {
+  color: #89ffbe;
+  text-shadow: 1px 1px 0px var(--main-colordark);
 }
- */
+
 .arrow {
   border: solid var(--main-color);
   border-width: 0 8px 8px 0;
@@ -12967,7 +12965,7 @@ body, html {
 }
 
 .btn-grad, .btn-med, .logout, .register {
-  background-image: linear-gradient(to right, var(--main-color) 0%, #5cffff 65%, var(--main-color) 100%);
+  background-image: linear-gradient(to right, var(--main-color) 0%, #89ffbe 65%, var(--main-color) 100%);
 }
 
 .btn-grad {

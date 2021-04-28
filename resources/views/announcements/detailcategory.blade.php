@@ -6,7 +6,7 @@
 <div class="container-fluid h-auto mt-4" style="min-height: 450px;">
     <div class="row mb-4">
         <div class='col-12 text-center'>
-            <h1>{{__('ui.allAdsFrom')}} <span style="color: #5cc9d6e3">{{__("ui.{$category->name}")}}</span></h1>
+            <h1>{{__('ui.allAdsFrom')}} <span style="color: var(--main-light); text-shadow: 1px 1px 0px var(--main-colordark)">{{__("ui.{$category->name}")}}</span></h1>
         </div>
     </div>
     <div class="row vw-100 justify-content-center align-items-center">

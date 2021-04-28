@@ -89,34 +89,16 @@
                 <ul class="d-flex list-unstyled justify-content-center align-items-center mb-lg-0">
                     <li class="dropdown">
                         <a class="icon__world text-decoration-none" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="modal" data-bs-target="#lang">
+                            data-bs-toggle="dropdown" data-bs-target="#lang">
                             <ion-icon name="globe-outline"></ion-icon>
                         </a>
                         {{-- Modal Languages --}}
-                        <div class="modal fade" id="lang" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div>Languages
-                                            {{--                                             @include('includes._locale',["lang"=>'es',"nation"=>'es'])
-                                            @include('includes._locale',["lang"=>'en',"nation"=>'gb'])
-                                            @include('includes._locale',["lang"=>'it',"nation"=>'it'])
-                                            @include('includes._locale',["lang"=>'fr',"nation"=>'fr']) --}}
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary"
-                                            data-bs-dismiss="modal">Close</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            @include('includes._locale',["lang"=>'es',"nation"=>'es'])
+                            @include('includes._locale',["lang"=>'en',"nation"=>'gb'])
+                            @include('includes._locale',["lang"=>'it',"nation"=>'it'])
+                            @include('includes._locale',["lang"=>'fr',"nation"=>'fr'])
+                        </ul>
                     </li>
                 </ul>
             </div>
