@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title')
-<title>{{__('ui.login')}} - Pronto.es</title>
+<title>{{__('ui.login')}} - Pronto-BE</title>
 @endsection
 @section('content')
 <div class="container-fluid my-5">

@@ -12738,7 +12738,7 @@ body, html {
   color: var(--main-color);
 }
 
-.logout, .register {
+.logout {
   height: 2rem;
   width: 8rem;
   text-align: center;
@@ -12750,7 +12750,15 @@ body, html {
   border: none;
 }
 
-.logout:hover, .register:hover {
+.register {
+  color: var(--main-color);
+}
+
+.register:hover {
+  color: var(--main-colordark);
+}
+
+.logout:hover {
   background-position: right center;
   /* change the direction of the change here */
   color: #fff;
@@ -12964,7 +12972,7 @@ body, html {
   border-radius: 10px;
 }
 
-.btn-grad, .btn-med, .logout, .register {
+.btn-grad, .btn-med, .logout {
   background-image: linear-gradient(to right, var(--main-color) 0%, #89ffbe 65%, var(--main-color) 100%);
 }
 
@@ -13051,16 +13059,16 @@ body, html {
   font-size: 13px;
 }
 
-.footer-link a {
+.footer-link a, .copyright {
   color: var(--main-black);
   text-decoration: none;
 }
 
-.footer-link a:hover {
+.footer-link a:hover, .copyright {
   color: var(--main-color);
 }
 
-.footer-link a:active {
+.footer-link a:active, .copyright {
   color: var(--main-colordark);
 }
 

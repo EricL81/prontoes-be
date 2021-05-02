@@ -36,14 +36,14 @@
                 </button>
             </form>
             <div class="d-flex justify-content-center">
-                <ul class="d-flex list-unstyled justify-content-center align-items-center mb-0">
+                <ul class="list-unstyled d-flex flex-column justify-content-around align-items-center mb-0">
                     @guest
                     <li class="nav-item me-2">
                         <a class="text-decoration-none login d-flex align-items-center justify-content-center fw-bold fs-6"
                             href='/login'>{{__('ui.login')}}</a>
                     </li>
                     <li class="nav-item me-2">
-                        <a class="text-decoration-none register d-flex align-items-center justify-content-center fw-bold fs-6"
+                        <a class="register d-flex align-items-end justify-content-center fw-bold fs-6"
                             href='/register'>{{__('ui.register')}}</a>
                     </li>
                     @endguest

@@ -14,7 +14,7 @@
         @foreach($categories as $category)
         <div class="col">
             <ul class="d-flex justify-content-center flex-wrap list-unstyled my-4">
-                <li class=" mx-1 flex-shrink-0 d-flex linav" style="background-image: url('/img/{{$category->foto}}');"><a class="text-decoration-none text-white fs-3 fw-bold align-items-center d-flex justify-content-center" href="{{route('detailCategory',['id'=>$category->id])}}"><span>{{$category->name}}</span></a></li>
+                <li class=" mx-1 flex-shrink-0 d-flex linav" style="background-image: url('/img/{{$category->foto}}');"><a class="text-decoration-none text-white fs-3 fw-bold align-items-center d-flex justify-content-center" href="{{route('detailCategory',['id'=>$category->id])}}"><span class="text-center">{{__("ui.{$category->name}")}}</span></a></li>
 
             </ul>
         </div>
