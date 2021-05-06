@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light background-be border-gradient mb-3" id="tophome">
+<nav class="navbar navbar-expand-lg navbar-light background-be border-gradient" id="tophome">
     <div class="container-fluid">
         <div class="d-flex align-items-center">
             <a class="navbar-brand" href="{{route('home')}}"><img class="ms-3" src="/css/IMA.png" width="90" alt=""></a>

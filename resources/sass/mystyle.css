@@ -8,8 +8,8 @@
     --primary-dark: #5b0eeb;
     --white: #ffffff;
     --greyLight-1: #e9eef5;
-    --greyLight-2: #c8d0e7;
-    --greyLight-3: #b2bbd4;
+    --greyLight-2: #bac1d6;
+    --greyLight-3: #9ea7be;
     --greyDark: #9baacf;
 }
 
@@ -21,7 +21,8 @@ body, html {
     /*     background-color: #99D2A5e3;
     background-image: linear-gradient(0deg, #a9ffeae3 30%, #5cc9d6e3 70%); */
     overflow-x: hidden;
-    background: var(--greyLight-1);
+    /*     background: var(--greyLight-1);
+ */
 }
 
 .link-simple {
@@ -97,11 +98,11 @@ body, html {
 }
 
 .register {
-    color: var(--main-color);
+    color: var(--main-colordark);
 }
 
 .register:hover {
-    color: var(--main-colordark);
+    color: var(--main-color);
 }
 
 .logout:hover {
@@ -137,9 +138,11 @@ body, html {
     color: var(--main-color) !important;
 }
 
-/* .welcome {
-    font-size: 4rem;
-} */
+.welcome {
+    color: var(--main-colordark);
+    font-weight: bold !important;
+    text-shadow: 1px 1px 0px var(--main-light);
+}
 
 .form-login {
     -webkit-box-shadow: 0.3rem 0.3rem 0.6rem var(--greyLight-2), -0.2rem -0.2rem 0.5rem var(--white);
@@ -226,7 +229,7 @@ body, html {
 
 .background-be {
     background-image: url("/css/pat1-100.jpg");
-    background-color: var(--greyLight-1);
+    background-color: #e5e3f5;
     background-blend-mode: multiply;
     background-repeat: no-repeat;
     background-position: center;
@@ -304,6 +307,37 @@ body, html {
 
 .container__announcements {
     background-image: url("/css/purple-bubbles-1.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.categories {
+    background-image: url("/css/purple-bubbles-1.jpg");
+    background-size: cover;
+    position: relative;
+    z-index: 9;
+}
+
+.categories::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.7);
+    z-index: -1;
+}
+
+.container__categories {
+    position: relative;
+    z-index: 9999;
+}
+
+@media (min-width: 1024px) {
+    .categories {
+        background-attachment: fixed;
+    }
 }
 
 .mycard {
@@ -418,4 +452,23 @@ body, html {
 
 .footer-link a:active, .copyright {
     color: var(--main-colordark);
+}
+
+.social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #46423b;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    background: var(--main-color);
 }
