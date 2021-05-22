@@ -4,12 +4,12 @@
 @endsection
 @section('content')
 <div class="container">
-    <div class="row">
+    <div class="row mt-3">
         <div class="col-12 col-lg-4 offset-lg-4 text-center">
             <h2>{{__("ui.uploadAd")}}</h2>
         </div>
     </div>
-    <div class="row">
+    <div class="row my-3">
         <div class="form-login col-12 col-lg-4 offset-lg-4 p-3 background-be">
             <form action="{{route('createAnnouncement')}}" method="POST">
                 @csrf

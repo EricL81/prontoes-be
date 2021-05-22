@@ -7,8 +7,8 @@
 <section class="categories">
     <div class="container-fluid mx-2 px-0 py-3 h-auto .container__categories">
         <div class="row justify-content-center align-items-center my-3">
-            <div class="col-12 text-center">
-                <h1 class="my-4 welcome">{{__('ui.welcome')}}</h1>
+            <div class="col-12 text-center px-0">
+                <h1 class="my-4 welcome text-center">{{__('ui.welcome')}}</h1>
             </div>
         </div>
         <div class="row row-cols-xl-5 justify-content-center my-5">
