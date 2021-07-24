@@ -1,5 +1,8 @@
 # ![](public/css/bee.png) Live Website: https://pronto-be.site/
 
+<br>
+<br>
+
 # About this Project:
 
 The final project of the Coding Bootcamp was thought as a clone of the well-known second-hand Sell & Buy portal WALLAPOP and includes following functionalities:
