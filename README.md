@@ -12,6 +12,9 @@ The final project of the Coding Bootcamp was thought as a clone of the well-know
     
  We built this App in pair-programming with a colleague of the Bootcamp.
  
+ <br>
+ <br>
+ 
  ## Stack used:
  
 <img align="left" alt="html5" src="https://img.shields.io/badge/-HTML-F64A1D?&style=for-the-badge&logo=html5&logoColor=white" />
