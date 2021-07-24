@@ -1,4 +1,4 @@
-![](public/css/IMA.png)
+![](public/css/bee.png)
 
 # Live Website: https://pronto-be.site/
 
