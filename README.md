@@ -38,6 +38,26 @@ The final project of the Coding Bootcamp was thought as a clone of the well-know
 <br>
 <br>
 
+## Project setup
+```
+npm install
+```
+
+### Compiles and hot-reloads for development
+```
+npm run serve
+```
+
+### Compiles and minifies for production
+```
+npm run build
+```
+<br>
+<br>
+<br>
+<br>
+<br>
+
 ## Snapshots:  
 
 ![](pronto1.png)  
