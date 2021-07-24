@@ -1,4 +1,4 @@
-<img src="./public/css/bee.jpg" />  
+![](public/css/bee.jpg)
 
 # Live Website: https://pronto-be.site/
 
