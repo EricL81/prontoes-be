@@ -7,11 +7,16 @@
 
 The final project of the Coding Bootcamp was thought as a clone of the well-known second-hand Sell & Buy portal WALLAPOP and includes following functionalities:
 
-    - Authentication (Fortify)              - Multi-language Portal (EN, ES, IT, FR)
-    - Upload announcement                   - Asynchronous Queue Workers
-    - Relation 1-to-Many                    - IA use of Google Vision API
-    - Relation Many-to-Many                 - Full-text search
-    - Areas: Public/Private/Revisor         - MVC: Model-View-Controller
+   - Authentication (Fortify)              
+   - Multi-language Portal (EN, ES, IT, FR)
+   - Upload announcement                   
+   - Asynchronous Queue Workers
+   - Relation 1-to-Many
+   - Relation Many-to-Many                                  
+   - IA use of Google Vision API
+   - Full-text search
+   - Areas: Public/Private/Revisor         
+   - MVC: Model-View-Controller
     
  We built this App in pair-programming with a colleague of the Bootcamp.
  
@@ -26,6 +31,28 @@ The final project of the Coding Bootcamp was thought as a clone of the well-know
 <img align="left" alt="mySQL" src="https://img.shields.io/badge/-MySQL-1B5E86?&style=for-the-badge&logo=mysql&logoColor=white" />
 <img align="left" alt="laravel" src="https://img.shields.io/badge/-Laravel-F62C1F?&style=for-the-badge&logo=laravel&logoColor=white" />
 <img align="left" alt="bootstrap" src="https://img.shields.io/badge/-bootstrap-533C78?&style=for-the-badge&logo=bootstrap&logoColor=white" />
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+## Snapshots:
+
+![](pronto.png)  
+
+<br>  
+
+![](pronto1.png)  
+
+<br>  
+
+![](pronto2.png)  
+
+<br>  
+
+![](pronto3.png)
 
 <br>
 <br>
