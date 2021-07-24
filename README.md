@@ -2,8 +2,18 @@
 
 # https://pronto-be.site/
 
+# About this Project:
 
+The final project of the Coding Bootcamp was thought as a clone of the well-known second-hand Sell & Buy portal WALLAPOP and includes following functionalities:
 
+    - Authentication (Fortify)              - Multi-language Portal
+    - Upload announcement                   - Asynchronous Queue Workers
+    - Relation 1-to-Many                    - IA use of Google Vision API
+    - Relation Many-to-Many                 - Full-text search
+    - Areas: Public/Private/Revisor         - MVC: Model-View-Controller
+    
+    
+   
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
