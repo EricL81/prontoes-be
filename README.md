@@ -1,4 +1,4 @@
-# <img src="./css/IMA.png" /> Live Website: https://pronto-be.site/
+# <img src="./public/css/IMA.png" /> Live Website: https://pronto-be.site/
 
 # About this Project:
 
