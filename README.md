@@ -38,11 +38,7 @@ The final project of the Coding Bootcamp was thought as a clone of the well-know
 <br>
 <br>
 
-## Snapshots:
-
-![](pronto.png)  
-
-<br>  
+## Snapshots:  
 
 ![](pronto1.png)  
 
