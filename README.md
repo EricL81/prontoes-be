@@ -12,7 +12,6 @@ The final project of the Coding Bootcamp was thought as a clone of the well-know
    - Upload announcement                   
    - Asynchronous Queue Workers
    - Relation 1-to-Many
-   - Relation Many-to-Many                                  
    - IA use of Google Vision API
    - Full-text search
    - Areas: Public/Private/Revisor         
