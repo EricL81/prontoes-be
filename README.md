@@ -37,7 +37,7 @@ The final project of the Coding Bootcamp was thought as a clone of the well-know
 
 ## User Flowchart:
 
-![](ProntBE-flowchart.png)
+![](ProntoBE-flowchart.png)
 
 <br>
 
