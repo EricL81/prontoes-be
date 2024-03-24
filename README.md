@@ -34,6 +34,18 @@ The final project of the Coding Bootcamp was thought as a clone of the well-know
 <br>
 <br>
 <br>
+
+## User Flowchart:
+
+![](ProntoBE-flowchart.png)
+
+<br>
+
+## Database Schema:
+
+![](prontoBE-DBschema.png)
+
+<br>
 <br>
 <br>
 
@@ -51,8 +63,6 @@ npm run serve
 ```
 npm run build
 ```
-<br>
-<br>
 <br>
 <br>
 <br>
