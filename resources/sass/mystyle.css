@@ -25,6 +25,40 @@ body, html {
  */
 }
 
+body {
+    background-image: url("/css/purple-bubbles-1.jpg");
+    background-size: cover;
+    position: relative;
+}
+
+.container__announcements>.row {
+    padding-inline: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+@media (min-width: 576px) {
+    .container__announcements>.row {
+        padding-inline: inherit;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+}
+
+.container__announcements div:has(>.mycard) {
+    padding-inline: 0;
+}
+
+@media (min-width: 768px) {
+    .container__announcements div:has(>.mycard) {
+        padding-inline: inherit;
+    }
+}
+
+.row {
+    margin-inline: 0;
+}
+
 .link-simple {
     color: #7F6BF6;
     text-decoration: none;
@@ -305,17 +339,17 @@ body, html {
     -webkit-transform: rotate(-135deg);
 }
 
-.container__announcements {
+/*.container__announcements {
     background-image: url("/css/purple-bubbles-1.jpg");
     background-size: cover;
     position: relative;
-}
+}*/
 
 .categories {
-    background-image: url("/css/purple-bubbles-1.jpg");
+    /*background-image: url("/css/purple-bubbles-1.jpg");
     background-size: cover;
+    z-index: 9;*/
     position: relative;
-    z-index: 9;
 }
 
 .categories::before {
@@ -325,7 +359,7 @@ body, html {
     right: 0;
     top: 0;
     bottom: 0;
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.85);
     z-index: -1;
 }
 
@@ -341,12 +375,12 @@ body, html {
 }
 
 .mycard {
-    background: rgba( 255, 255, 255, 0.75);
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
-    backdrop-filter: blur( 4px);
-    -webkit-backdrop-filter: blur( 4px);
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.18);
     /*     max-width: 620px;
  */
 }
@@ -354,6 +388,26 @@ body, html {
 .mycard img {
     border: 0px;
     border-radius: 10px;
+    max-width: 250px;
+}
+
+@media (min-width: 768px) {
+    .mycard img {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        max-width: inherit;
+
+    }
+}
+
+.mycard .row div:has(img) {
+    padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .mycard .row div:has(img) {
+        padding: 0;
+    }
 }
 
 .btn-grad, .btn-med, .logout {
