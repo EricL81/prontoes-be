@@ -29,7 +29,7 @@ class HomeController extends Controller
 
         return view('announcements.new', compact('uniqueSecret'));
     }
-    
+
     public function createAnnouncement(AnnouncementRequest $request)
     {
         $a = new Announcement();
@@ -41,12 +41,12 @@ class HomeController extends Controller
         $a->save();
 
         $uniqueSecret = $request->input('uniqueSecret');
-        
+
         $images = session()->get("images.{$uniqueSecret}",[]);
         $removedImages = session()->get("removedImages.{$uniqueSecret}",[]);
 
         $images = array_diff($images, $removedImages);
-
+        var_dump($images);
 
         foreach($images as $image){
             $i = new AnnouncementImage;
@@ -64,18 +64,18 @@ class HomeController extends Controller
 /*             dispatch(new GoogleVisionSafeSearchImage($i->id));
  */
             Bus::chain([
-                new GoogleVisionSafeSearchImage($i->id),
-                new GoogleVisionLabelImage($i->id),
-                new GoogleVisionRemoveFaces($i->id),
                 new ResizeImage($newFilePath,300,380),
                 new ResizeImage($newFilePath,500,400),
                 new ResizeImage($newFilePath,300,300),
+                new GoogleVisionSafeSearchImage($i->id),
+                new GoogleVisionLabelImage($i->id),
+                new GoogleVisionRemoveFaces($i->id),
             ])->dispatch();
 
         }
 
         File::deleteDirectory(storage_path("app/public/temp/{$uniqueSecret}"));
-        
+
         return redirect()->route('home')->with('announcement.create.success','Anuncio creado con exito. Será revisado en la mayor brevedad posible.');
     }
 
@@ -93,7 +93,7 @@ class HomeController extends Controller
 
         $uniqueSecret = $request->input('uniqueSecret');
         $filePath = $request->file('file')->store("public/temp/{$uniqueSecret}");
-        
+
         dispatch(new ResizeImage($filePath,120,120));
 
         session()->push("images.{$uniqueSecret}", $filePath);
@@ -101,18 +101,18 @@ class HomeController extends Controller
             [
                 'id' => $filePath
             ]
-        );    
+        );
     }
 
 
     public function removeImages(Request $request)
-    {       
+    {
         $uniqueSecret = $request->input('uniqueSecret');
         $fileName = $request->input('id');
         session()->push("removedImages.{$uniqueSecret}", $fileName);
         Storage::delete($fileName);
         return response()->json('ok');
-        
+
     }
 
     public function getImages(Request $request)
@@ -121,9 +121,9 @@ class HomeController extends Controller
         $images = session()->get("images.{$uniqueSecret}",[]);
         $removedImages = session()->get("removedImages.{$uniqueSecret}",[]);
         $images = array_diff($images, $removedImages);
-        
+
         $data = [];
-    
+
         foreach($images as $image){
             $data[] = [
                 'id' => $image,

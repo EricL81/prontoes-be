@@ -2,7 +2,7 @@
     --main-color: #7F6BF6;
     --main-colordark: #5443b5;
     --main-black: #232323;
-    --main-light: #89ffbe;
+    --main-light: #83f8b8;
     --primary-light: #8abdff;
     --primary: #6d5dfc;
     --primary-dark: #5b0eeb;
@@ -29,6 +29,32 @@ body {
     background-image: url("/css/purple-bubbles-1.jpg");
     background-size: cover;
     position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.alert {
+    margin-bottom: 0 !important;
+}
+
+.alert-success {
+    background-color: #d1e7dd !important;
+}
+
+.alert-danger {
+    background-color: #f8d7da !important;
+}
+
+.content {
+    flex: 1;
+}
+
+.content-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1.5rem;
 }
 
 .container__announcements>.row {
@@ -185,6 +211,7 @@ body {
     border: 0px;
     border-radius: 1rem;
     min-width: 330px;
+    max-width: 550px;
 }
 
 .icon__account, .icon__home, .icon__world {
@@ -352,20 +379,14 @@ body {
     position: relative;
 }
 
-.categories::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background: rgba(255, 255, 255, 0.85);
-    z-index: -1;
+.content>*:not(.container__announcements) {
+    background: rgba(255, 255, 255, 0.8);
 }
 
 .container__categories {
     position: relative;
-    z-index: 9999;
+    z-index: 9;
+    height: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -393,8 +414,7 @@ body {
 
 @media (min-width: 768px) {
     .mycard img {
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
+        border-radius: 10px 0 0 10px;
         max-width: inherit;
 
     }

@@ -26,17 +26,19 @@
 
 <body class="antialiased">
     @include('includes._nav')
-    @if(session('announcement.create.success'))
-    <div class="alert alert-success">{{session('announcement.create.success')}}</div>
-    @endif
-    @if(session('access.denied.revisor.only'))
-    <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
-    @endif
 
-    @yield('content')
+    <div class="content">
+        @if(session('announcement.create.success'))
+            <div class="alert alert-success">{{session('announcement.create.success')}}</div>
+        @endif
+        @if(session('access.denied.revisor.only'))
+            <div class="alert alert-danger">{{session('access.denied.revisor.only')}}</div>
+        @endif
+        @yield('content')
+    </div>
 
-    <script src="{{mix('js/app.js')}}"></script>
     @include('includes._footer')
+    <script src="{{mix('js/app.js')}}"></script>
 </body>
 
 </html>

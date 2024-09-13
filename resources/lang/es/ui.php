@@ -30,7 +30,7 @@ return [
     'Coches y motos'=>'Coches y motos',
     'Bicicletas'=>'Bicicletas',
     'Coleccionismo'=>'Coleccionismo',
-    'discover'=>'Descubre los últimos anuncions publicados',
+    'discover'=>'Descubre los últimos anuncios publicados',
     'published'=>'Publicado por',
     'dateAd'=>'Fecha de creación',
     'adDetail'=>'Ver anuncio',
