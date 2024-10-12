@@ -22,7 +22,6 @@ tasks:
     - artisan:view:cache
     - artisan:config:cache
     - artisan:migrate
-    - run: "source ~/.nvm/nvm.sh && nvm use 20"
     - npm:install
     - npm:run:prod
     - deploy:publish
