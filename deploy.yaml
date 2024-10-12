@@ -25,7 +25,6 @@ tasks:
     - npm:install
     - npm:run:prod
     - deploy:publish
-    - php-fpm:reload
   npm:run:prod:
     - run: "cd {{release_or_current_path}} && npm run prod"
   nginx:restart:
