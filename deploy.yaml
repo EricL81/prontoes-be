@@ -1,0 +1,36 @@
+import:
+  - recipe/laravel.php
+  - contrib/php-fpm.php
+  - contrib/npm.php
+
+config:
+  application: "pronto-be"
+  repository: "git@github.com:EricL81/pronto-be.git"
+  php_fpm_version: "8.0"
+
+hosts:
+  prod:
+    remote_user: ploi
+    hostname: "ploi.pronto-be.site"
+    deploy_path: "~/{{hostname}}"
+
+tasks:
+  deploy:
+    - deploy:prepare
+    - deploy:vendors
+    - artisan:storage:link
+    - artisan:view:cache
+    - artisan:config:cache
+    - artisan:migrate
+    - run: "source ~/.nvm/nvm.sh && nvm use 20"
+    - npm:install
+    - npm:run:prod
+    - deploy:publish
+    - php-fpm:reload
+  npm:run:prod:
+    - run: "cd {{release_or_current_path}} && npm run prod"
+  nginx:restart:
+    - run: "service nginx restart"
+
+after:
+  deploy:failed: deploy:unlock
