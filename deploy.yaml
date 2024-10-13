@@ -11,7 +11,7 @@ config:
 hosts:
   prod:
     remote_user: ploi
-    hostname: "ploi.pronto-be.site"
+    hostname: "pronto-be.site"
     deploy_path: "~/{{hostname}}"
 
 tasks:
