@@ -17,7 +17,6 @@
                     <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
                     <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
                 </li>
-         
             </ul>
         </div>
         <div class="col-12 col-md-6 col-lg-4 d-flex flex-column align-items-center justify-content-start">

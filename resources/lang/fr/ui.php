@@ -54,6 +54,8 @@ return [
     'noAdsInRevisor'=>'Plus aucune annonce à réviser.',
     'languages'=>'Langues',
     'search'=>'Rechercher',
-
-
+    'es'=>'Espagnol',
+    'gb'=>'Anglais',
+    'it'=>'Italien',
+    'fr'=>'Français',
 ];

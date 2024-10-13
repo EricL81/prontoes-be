@@ -93,7 +93,7 @@
                             <ion-icon name="globe-outline"></ion-icon>
                         </a>
                         {{-- Modal Languages --}}
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu language-menu" aria-labelledby="navbarDropdown">
                             @include('includes._locale',["lang"=>'es',"nation"=>'es'])
                             @include('includes._locale',["lang"=>'en',"nation"=>'gb'])
                             @include('includes._locale',["lang"=>'it',"nation"=>'it'])

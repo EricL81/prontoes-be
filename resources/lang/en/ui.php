@@ -54,4 +54,8 @@ return [
     'noAdsInRevisor'=>'There are no announcements to review.',
     'languages'=>'Languages',
     'search'=>'Search',
+    'es'=>'Spanish',
+    'gb'=>'English',
+    'it'=>'Italian',
+    'fr'=>'French',
 ];
