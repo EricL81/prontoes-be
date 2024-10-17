@@ -13827,6 +13827,21 @@ body {
   flex-direction: column;
 }
 
+.navbar > .container-fluid, .navbar > .container-sm, .navbar > .container-md, .navbar > .container-lg, .navbar > .container-xl, .navbar > .container-xxl {
+  max-width: 2000px;
+  position: relative;
+}
+
+@media screen and (max-width: 992px) {
+  .navbar > .container-fluid > div, .navbar > .container-sm > div, .navbar > .container-md > div, .navbar > .container-lg > div, .navbar > .container-xl > div, .navbar > .container-xxl > div {
+    flex-grow: 1;
+  }
+  .navbar .home-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
 .alert {
   margin-bottom: 0 !important;
 }
@@ -14168,6 +14183,11 @@ body {
     background-size: cover;
     position: relative;
 }*/
+.carousel-inner {
+  display: flex;
+  align-items: center;
+}
+
 .categories {
   /*background-image: url("/css/purple-bubbles-1.jpg");
   background-size: cover;
@@ -14197,29 +14217,18 @@ body {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
-  /*     max-width: 620px;
-  */
+  padding: 1rem;
 }
 
 .mycard img {
   border: 0px;
   border-radius: 10px;
-  max-width: 250px;
 }
 
 @media (min-width: 768px) {
   .mycard img {
     border-radius: 10px 0 0 10px;
     max-width: inherit;
-  }
-}
-.mycard .row div:has(img) {
-  padding: 1rem;
-}
-
-@media (min-width: 768px) {
-  .mycard .row div:has(img) {
-    padding: 0;
   }
 }
 .btn-grad,

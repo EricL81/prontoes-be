@@ -37,11 +37,11 @@
         <div class="col-12 col-xl-6 h-100 d-flex justify-content-center">
             <div class="card mb-4 mx-1 mycard">
                 <div class="row">
-                    <div class="col-12 col-md-4 col-xl-6 d-flex justify-content-center justify-content-md-start">
+                    <div class="col-12 col-md-4 col-xl-6 px-0 d-flex justify-content-center justify-content-md-start">
                         <img class="img-fluid h-100" width="300" height="380" style="object-fit: cover;"
                             src="{{$announcement->images->first()->getUrl(300,380)}}" alt="...">
                     </div>
-                    <div class="col-12 col-md-8 col-xl-6 ps-lg-0">
+                    <div class="col-12 col-md-8 col-xl-6 px-0 ps-lg-0">
                         <div class="card-body d-flex flex-column h-100">
                             <div>
                                 <h5 class="card-title fw-bold fs-2">{{$announcement->name}}</h5>

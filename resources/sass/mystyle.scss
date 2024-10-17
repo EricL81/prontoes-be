@@ -35,6 +35,23 @@ body {
     flex-direction: column;
 }
 
+.navbar > .container-fluid {
+    max-width: 2000px;
+    position: relative;
+}
+
+@media screen and (max-width: 992px) {
+    .navbar > .container-fluid > div {
+        flex-grow: 1;
+    }
+
+    .navbar .home-wrapper {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
 .alert {
     margin-bottom: 0 !important;
 }
@@ -398,6 +415,11 @@ body {
     position: relative;
 }*/
 
+.carousel-inner {
+    display: flex;
+    align-items: center;
+}
+
 .categories {
     /*background-image: url("/css/purple-bubbles-1.jpg");
     background-size: cover;
@@ -428,30 +450,20 @@ body {
     -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    /*     max-width: 620px;
- */
+    padding: 1rem;
+    // max-width: 620px;
 }
 
 .mycard img {
     border: 0px;
     border-radius: 10px;
-    max-width: 250px;
+    // max-width: 250px;
 }
 
 @media (min-width: 768px) {
     .mycard img {
         border-radius: 10px 0 0 10px;
         max-width: inherit;
-    }
-}
-
-.mycard .row div:has(img) {
-    padding: 1rem;
-}
-
-@media (min-width: 768px) {
-    .mycard .row div:has(img) {
-        padding: 0;
     }
 }
 

@@ -4,17 +4,17 @@
 @endsection
 @section('content')
 <div class="container-fluid h-100 align-content-center p-4">
-    <div class="content-wrapper">
+    <div class="content-wrapper p-0">
         <div class="row align-items-center">
-            <div class="col-12 m-auto">
-                <div class="card mb-3 mycard">
+            <div class="col-12 m-auto px-0">
+                <div class="card mycard">
                     <div class="row">
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6 px-0">
                             <div id="carouselExampleControls" class="carousel slide carousel-fade h-100" data-bs-ride="carousel">
                                 <div class="carousel-inner w-100 h-100">
                                     @foreach ($announcement->images as $image)
                                         <div class="carousel-item text-center @if($loop->first)active @endif">
-                                            <img class="img-fluid w-100 h-100 p-3" style="object-fit: cover;" src="{{$image->getUrl(500,400)}}" alt="...">
+                                            <img class="img-fluid w-100 h-100" style="object-fit: cover;" src="{{$image->getUrl(500,400)}}" alt="...">
                                         </div>
                                     @endforeach
                                 </div>
@@ -30,7 +30,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="col-12 col-md-6">
+                        <div class="col-12 col-md-6 px-0">
                             <div class="card-body d-flex flex-column h-100">
                                 <div>
                                     <h5 class="card-title fw-bold fs-2">{{$announcement->name}}</h5>
