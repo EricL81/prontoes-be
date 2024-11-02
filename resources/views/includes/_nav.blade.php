@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="d-flex align-items-center">
             <a class="navbar-brand" href="{{route('home')}}"><img class="ms-3" src="/css/IMA.png" width="90" alt=""></a>
-            <div class="w-100 d-flex justify-content-center">
+            <div class="home-wrapper">
                 <a class="icon__home" aria-current="page" href="{{route('home')}}">
                 <ion-icon name="home"></ion-icon>
             </a>

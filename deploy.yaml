@@ -5,7 +5,7 @@ import:
 
 config:
   application: "pronto-be"
-  repository: "git@github.com:EricL81/pronto-be.git"
+  repository: "git@github.com:EricLDev/pronto-be.git"
   php_fpm_version: "8.0"
 
 hosts:
